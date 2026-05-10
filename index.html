@@ -1,1 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hafiz Moeen Raza | WordPress & UI/UX Designer</title>
+<meta name="description" content="Hafiz Moeen Raza — WordPress & UI/UX Designer from Rahim Yar Khan, Pakistan. Expert in Elementor, Real Estate Websites, Figma, WooCommerce. 5+ years experience.">
+<meta name="author" content="Hafiz Moeen Raza">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+<style>
+:root {
+  --neon:   #00f5ff;
+  --neon2:  #b400ff;
+  --neon3:  #ff006e;
+  --neon4:  #7fff00;
+  --bg:     #04040a;
+  --bg2:    #060610;
+  --bg3:    #080818;
+  --sf:     #0c0c1e;
+  --sf2:    #111128;
+  --tx:     #e8e8ff;
+  --txd:    #6a6a9a;
+  --grad1:  linear-gradient(135deg, #00f5ff, #b400ff);
+  --grad2:  linear-gradient(135deg, #ff006e, #b400ff);
+  --grad3:  linear-gradient(135deg, #00f5ff, #7fff00);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--neon2); border-radius: 2px; }
+
+/* ===== SPLASH ===== */
+#splash {
+  position: fixed; inset: 0; z-index: 9999; background: var(--bg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: opacity .9s, transform .9s;
+}
+#splash.hide { opacity: 0; transform: scale(1.04); pointer-events: none; }
+.sp-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; letter-spacing: 8px;
+  background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: pop .8s cubic-bezier(.175,.885,.32,1.275) both;
+}
+@keyframes pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.sp-bar { width: 220px; height: 2px; background: var(--sf2); border-radius: 2px; overflow: hidden; margin-top: 24px; animation: fadeup .6s .4s both; }
+.sp-fill { height: 100%; width: 0; background: var(--grad1); animation: lbar 2.4s .5s ease forwards; box-shadow: 0 0 12px var(--neon); }
+@keyframes lbar { to { width: 100%; } }
+.sp-sub { font-family: 'Space Mono', monospace; font-size: .55rem; letter-spacing: 5px; color: var(--txd); margin-top: 12px; text-transform: uppercase; animation: fadeup .6s .8s both; }
+@keyframes fadeup { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* ===== FIXED BG LAYERS ===== */
+#bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+/* Noise texture overlay */
+#noise {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ===== LAYOUT ===== */
+section { position: relative; z-index: 1; padding: 90px 20px; }
+.wrap { max-width: 1140px; margin: 0 auto; }
+.sec-label { font-family: 'Space Mono', monospace; font-size: .56rem; letter-spacing: 7px; color: var(--neon); text-transform: uppercase; margin-bottom: 10px; }
+.sec-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: var(--tx); margin-bottom: 14px; line-height: 1.15; }
+.sec-title span { background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.sec-line { width: 60px; height: 2px; background: var(--grad1); margin-bottom: 50px; box-shadow: 0 0 10px var(--neon); }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s, transform .7s; }
+.reveal.vis { opacity: 1; transform: none; }
+.reveal[data-d="1"] { transition-delay: .08s; }
+.reveal[data-d="2"] { transition-delay: .16s; }
+.reveal[data-d="3"] { transition-delay: .24s; }
+.reveal[data-d="4"] { transition-delay: .32s; }
+
+/* ===== HERO ===== */
+#hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 80px 20px 60px; overflow: hidden; position: relative;
+}
+
+/* Rotating orb behind hero */
+.orb-wrap {
+  position: absolute; width: 700px; height: 700px;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none; z-index: 0;
+}
+.orb {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1px solid transparent;
+  background: conic-gradient(from 0deg, transparent 60%, #00f5ff22, #b400ff22, transparent 80%) border-box;
+  animation: orbspin 18s linear infinite;
+}
+.orb2 {
+  position: absolute; inset: 60px; border-radius: 50%;
+  border: 1px dashed #b400ff15;
+  animation: orbspin 28s linear infinite reverse;
+}
+.orb3 {
+  position: absolute; inset: 120px; border-radius: 50%;
+  border: 1px solid #00f5ff10;
+  animation: orbspin 22s linear infinite;
+}
+@keyframes orbspin { to { transform: rotate(360deg); } }
+.orb-dot {
+  position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--neon);
+  box-shadow: 0 0 12px var(--neon), 0 0 24px var(--neon);
+  top: -3px; left: 50%; transform: translateX(-50%);
+  animation: orbspin 18s linear infinite;
+  transform-origin: 3px 353px;
+}
+.orb-dot2 {
+  position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--neon2);
+  box-shadow: 0 0 12px var(--neon2);
+  bottom: 60px; right: -2px;
+  animation: orbspin 28s linear infinite reverse;
+  transform-origin: -348px -2.5px;
+}
+
+.hero-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px;
+  align-items: center; max-width: 1100px; width: 100%; margin: 0 auto; position: relative; z-index: 1;
+}
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+  .hero-right { order: -1; display: flex; justify-content: center; }
+}
+
+.avail {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px;
+  border: 1px solid #00f5ff30; border-radius: 30px; background: #00f5ff08;
+  font-family: 'Space Mono', monospace; font-size: .52rem; letter-spacing: 3px;
+  color: var(--neon); text-transform: uppercase; margin-bottom: 22px;
+  animation: fadeup .8s .4s both;
+}
+.adot { width: 7px; height: 7px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 8px var(--neon); animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.3;transform:scale(.7);} }
+
+/* Name typewriter effect */
+.hname-wrap { overflow: hidden; margin-bottom: 8px; }
+.hname {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1; letter-spacing: 3px;
+  background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: slideup 1s .2s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes slideup { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+.hrole {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(.6rem, 1.2vw, .78rem);
+  color: var(--txd); letter-spacing: 5px; margin-bottom: 20px;
+  text-transform: uppercase; animation: fadeup .8s .6s both;
+}
+
+.hbio {
+  font-size: clamp(.95rem, 1.5vw, 1.08rem); color: var(--tx); line-height: 1.85;
+  font-weight: 300; margin-bottom: 28px; animation: fadeup .8s .8s both;
+}
+.hbio strong { color: var(--neon); font-weight: 500; }
+
+.hbtns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeup .8s 1s both; }
+@media (max-width: 880px) { .hbtns { justify-content: center; } }
+.btn-primary {
+  padding: 13px 28px; border-radius: 6px; font-family: 'Space Mono', monospace;
+  font-size: .6rem; letter-spacing: 3px; text-transform: uppercase;
+  background: var(--grad1); color: #04040a; font-weight: 700;
+  transition: all .3s; box-shadow: 0 0 20px #00f5ff30;
+}
+.btn-primary:hover { box-shadow: 0 0 35px #00f5ff55; transform: translateY(-3px); }
+.btn-outline {
+  padding: 13px 28px; border-radius: 6px; font-family: 'Space Mono', monospace;
+  font-size: .6rem; letter-spacing: 3px; text-transform: uppercase;
+  border: 1px solid #00f5ff40; color: var(--neon); background: transparent;
+  transition: all .3s;
+}
+.btn-outline:hover { background: #00f5ff10; box-shadow: 0 0 20px #00f5ff25; transform: translateY(-3px); }
+
+/* Hero right — photo frame */
+.hero-photo-wrap { position: relative; width: 320px; height: 420px; animation: fadeup 1s .3s both; }
+@media (max-width: 480px) { .hero-photo-wrap { width: 240px; height: 320px; } }
+.hp-frame {
+  width: 100%; height: 100%; border-radius: 18px; overflow: hidden;
+  border: 1px solid #00f5ff25; box-shadow: 0 0 50px #00f5ff15, 0 0 100px #b400ff10;
+  position: relative; z-index: 2; background: var(--sf);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+.hp-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.hp-scan {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: 18px;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,245,255,.015) 3px, rgba(0,245,255,.015) 4px);
+}
+/* corner brackets */
+.hp-tl,.hp-tr,.hp-bl,.hp-br { position: absolute; width: 22px; height: 22px; z-index: 4; }
+.hp-tl { top: -1px; left: -1px; border-top: 2px solid var(--neon); border-left: 2px solid var(--neon); }
+.hp-tr { top: -1px; right: -1px; border-top: 2px solid var(--neon2); border-right: 2px solid var(--neon2); }
+.hp-bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--neon2); border-left: 2px solid var(--neon2); }
+.hp-br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--neon); border-right: 2px solid var(--neon); }
+
+/* floating badges */
+.hp-badge {
+  position: absolute; z-index: 5;
+  background: rgba(6,6,16,.85); backdrop-filter: blur(10px);
+  border: 1px solid #00f5ff30; border-radius: 8px;
+  padding: 8px 14px; display: flex; align-items: center; gap: 8px;
+  font-family: 'Space Mono', monospace; font-size: .52rem; letter-spacing: 2px;
+  color: var(--neon); white-space: nowrap; animation: float 5s 2s ease-in-out infinite;
+}
+.hp-badge.b1 { top: 20px; right: -30px; }
+.hp-badge.b2 { bottom: 30px; left: -30px; animation-delay: 1s; color: var(--neon2); border-color: #b400ff30; }
+.hp-badge span { font-size: 1.2rem; }
+@media (max-width: 880px) { .hp-badge { display: none; } }
+
+/* exp tag */
+.hp-exp {
+  position: absolute; top: -16px; left: 50%; transform: translateX(-50%); z-index: 6;
+  font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 3px;
+  background: var(--grad1); color: #04040a; padding: 5px 16px; border-radius: 20px;
+  white-space: nowrap; font-weight: 700; box-shadow: 0 0 16px #00f5ff50;
+}
+
+/* spin ring around photo */
+.hp-ring {
+  position: absolute; inset: -20px; border-radius: 24px;
+  border: 1px solid transparent;
+  background: conic-gradient(from 0deg, transparent 70%, #00f5ff40, transparent 90%) border-box;
+  animation: orbspin 8s linear infinite; z-index: 1;
+}
+
+/* ===== STATS ===== */
+#stats { padding: 50px 20px; background: var(--sf); border-top: 1px solid #00f5ff10; border-bottom: 1px solid #00f5ff10; }
+.sg { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+.sitem { text-align: center; }
+.sn { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; line-height: 1; background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.sl { font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 4px; color: var(--txd); margin-top: 5px; text-transform: uppercase; }
+
+/* ===== ABOUT ===== */
+#about { background: var(--bg2); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+.about-txt p { font-size: 1rem; color: var(--tx); line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
+.about-txt p strong { color: var(--neon); font-weight: 500; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.atag {
+  padding: 6px 16px; border: 1px solid #00f5ff25; border-radius: 30px;
+  font-family: 'Space Mono', monospace; font-size: .55rem; letter-spacing: 2px;
+  color: var(--txd); text-transform: uppercase; transition: all .3s;
+}
+.atag:hover { border-color: var(--neon); color: var(--neon); background: #00f5ff08; }
+
+/* Skills side */
+.skill-list { display: flex; flex-direction: column; gap: 20px; }
+.skr { }
+.sk-head { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.sk-name { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: 2px; color: var(--tx); text-transform: uppercase; }
+.sk-pct { font-family: 'Space Mono', monospace; font-size: .6rem; color: var(--neon); }
+.sk-track { height: 3px; background: var(--sf2); border-radius: 2px; overflow: hidden; }
+.skf { height: 100%; width: 0; border-radius: 2px; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
+.skf.c1 { background: var(--grad1); box-shadow: 0 0 8px var(--neon); }
+.skf.c2 { background: var(--grad2); box-shadow: 0 0 8px var(--neon2); }
+.skf.c3 { background: var(--grad3); box-shadow: 0 0 8px var(--neon4); }
+
+/* ===== SERVICES ===== */
+#services { background: var(--bg3); }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+.svc-card {
+  background: var(--sf); border: 1px solid #00f5ff12; border-radius: 14px;
+  padding: 32px 26px; transition: all .35s; position: relative; overflow: hidden;
+}
+.svc-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: 14px; opacity: 0;
+  background: linear-gradient(135deg, #00f5ff08, #b400ff08);
+  transition: opacity .35s;
+}
+.svc-card:hover::before { opacity: 1; }
+.svc-card:hover { border-color: #00f5ff35; transform: translateY(-5px); box-shadow: 0 12px 40px #00f5ff12; }
+.svc-icon {
+  width: 52px; height: 52px; border-radius: 10px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; background: var(--sf2); border: 1px solid #00f5ff15;
+}
+.svc-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--tx); margin-bottom: 10px; }
+.svc-card p { font-size: .9rem; color: var(--txd); line-height: 1.7; }
+
+/* ===== PORTFOLIO ===== */
+#portfolio { background: var(--bg); }
+.pw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.pw-card {
+  position: relative; border-radius: 12px; overflow: hidden; cursor: pointer;
+  border: 1px solid #00f5ff10; aspect-ratio: 16/10;
+  transition: all .35s;
+}
+.pw-card:hover { border-color: #00f5ff40; box-shadow: 0 0 30px #00f5ff18; transform: translateY(-4px); }
+.pw-card img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s; }
+.pw-card:hover img { transform: scale(1.05); }
+.pw-over {
+  position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,4,10,.95) 0%, rgba(4,4,10,.5) 60%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 18px;
+  opacity: 0; transition: opacity .35s;
+}
+.pw-card:hover .pw-over { opacity: 1; }
+.pw-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--tx); margin-bottom: 4px; }
+.pw-cat { font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 3px; color: var(--neon); text-transform: uppercase; }
+.pw-open { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: var(--grad1); display: flex; align-items: center; justify-content: center; color: #04040a; font-size: .85rem; opacity: 0; transform: scale(.7); transition: all .3s; }
+.pw-card:hover .pw-open { opacity: 1; transform: scale(1); }
+
+/* ===== LIGHTBOX ===== */
+#lb {
+  position: fixed; inset: 0; z-index: 9000; background: rgba(4,4,10,.96);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+  backdrop-filter: blur(10px);
+}
+#lb.open { opacity: 1; pointer-events: all; }
+.lb-inner { position: relative; max-width: 1100px; width: 100%; }
+#lb-img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 10px; border: 1px solid #00f5ff25; }
+#lb-cap { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: 3px; color: var(--neon); text-transform: uppercase; text-align: center; margin-top: 16px; }
+.lb-close { position: absolute; top: -16px; right: -16px; width: 40px; height: 40px; border-radius: 50%; background: var(--sf); border: 1px solid #00f5ff25; color: var(--tx); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; transition: all .3s; }
+.lb-close:hover { border-color: var(--neon3); color: var(--neon3); }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: var(--sf); border: 1px solid #00f5ff25; color: var(--neon); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1rem; transition: all .3s; }
+.lb-nav:hover { background: #00f5ff15; border-color: var(--neon); }
+.lb-prev { left: -60px; }
+.lb-next { right: -60px; }
+@media (max-width: 700px) { .lb-prev { left: 4px; } .lb-next { right: 4px; } }
+
+/* ===== PROCESS ===== */
+#process { background: var(--sf); }
+.proc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.proc-item {
+  background: var(--bg2); border: 1px solid #00f5ff10; border-radius: 12px;
+  padding: 28px 22px; position: relative; text-align: center; transition: all .3s;
+}
+.proc-item:hover { border-color: #00f5ff30; transform: translateY(-4px); }
+.proc-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 1;
+  background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  opacity: .2; position: absolute; top: 14px; right: 18px;
+}
+.proc-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.proc-item h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--tx); margin-bottom: 8px; }
+.proc-item p { font-size: .88rem; color: var(--txd); line-height: 1.6; }
+
+/* ===== TOOLS ===== */
+#tools { background: var(--bg2); }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 14px; }
+.tool-item {
+  background: var(--sf); border: 1px solid #00f5ff10; border-radius: 10px;
+  padding: 20px 14px; text-align: center; transition: all .3s;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.tool-item:hover { border-color: #00f5ff35; transform: translateY(-3px); box-shadow: 0 8px 24px #00f5ff10; }
+.tool-item i { font-size: 1.6rem; }
+.tool-item span { font-family: 'Space Mono', monospace; font-size: .52rem; letter-spacing: 2px; color: var(--txd); text-transform: uppercase; }
+
+/* ===== CONNECT ===== */
+#connect { background: var(--bg3); text-align: center; }
+.connect-inner { max-width: 700px; margin: 0 auto; }
+.connect-inner p { font-size: 1.05rem; color: var(--txd); line-height: 1.8; margin-bottom: 36px; font-weight: 300; }
+.social-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.sbtn {
+  display: flex; align-items: center; gap: 10px; padding: 13px 24px;
+  border: 1px solid #00f5ff20; border-radius: 8px; background: var(--sf);
+  color: var(--tx); font-family: 'Space Mono', monospace; font-size: .58rem; letter-spacing: 2px;
+  text-transform: uppercase; transition: all .3s;
+}
+.sbtn:hover { border-color: var(--neon); color: var(--neon); transform: translateY(-3px); box-shadow: 0 0 20px #00f5ff20; }
+.sbtn.wa:hover { border-color: #25D366; color: #25D366; box-shadow: 0 0 20px #25D36630; }
+.sbtn.ig:hover { border-color: #E1306C; color: #E1306C; box-shadow: 0 0 20px #E1306C30; }
+.sbtn.li:hover { border-color: #0A66C2; color: #0A66C2; box-shadow: 0 0 20px #0A66C230; }
+.sbtn i { font-size: 1.1rem; }
+
+/* Back to top */
+#btt { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #00f5ff30; background: var(--sf); color: var(--neon); display: flex; align-items: center; justify-content: center; font-size: .9rem; opacity: 0; transition: opacity .3s, transform .3s; box-shadow: 0 0 16px #00f5ff18; cursor: pointer; }
+#btt.show { opacity: 1; }
+#btt:hover { border-color: var(--neon); box-shadow: 0 0 28px #00f5ff40; transform: translateY(-3px); }
+
+/* ===== GRADIENT DIVIDER ===== */
+.gdivide { height: 1px; background: linear-gradient(90deg, transparent, #00f5ff20, #b400ff20, transparent); margin: 0; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  section { padding: 60px 16px; }
+  .orb-wrap { width: 400px; height: 400px; }
+  .orb-dot { display: none; } .orb-dot2 { display: none; }
+}
+
+/* ===== TECH BG ANIMATION CANVAS ===== */
+.hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="sp-logo">MR</div>
+  <div class="sp-bar"><div class="sp-fill"></div></div>
+  <div class="sp-sub">Initializing Portfolio...</div>
+</div>
+
+<!-- BG NOISE -->
+<div id="noise"></div>
+
+<!-- CANVAS for particle bg -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero">
+  <canvas class="hero-particles" id="particles"></canvas>
+
+  <!-- Rotating orb background -->
+  <div class="orb-wrap">
+    <div class="orb"></div>
+    <div class="orb2"></div>
+    <div class="orb3"></div>
+    <div class="orb-dot"></div>
+    <div class="orb-dot2"></div>
+  </div>
+
+  <div class="hero-grid">
+    <!-- LEFT TEXT -->
+    <div class="hero-left">
+      <div class="avail"><span class="adot"></span> Available for Work</div>
+
+      <div class="hname-wrap"><div class="hname">Hafiz Moeen Raza</div></div>
+
+      <div class="hrole" id="role-text">WordPress & UI/UX Designer</div>
+
+      <p class="hbio">
+        I'm a passionate <strong>WordPress & UI/UX Designer</strong> with <strong>5+ years</strong> of hands-on experience crafting pixel-perfect, conversion-focused digital experiences. From sleek real estate portals to polished eCommerce stores — I blend aesthetics with functionality using <strong>Elementor, Figma, WooCommerce</strong>, and modern design systems to deliver websites that truly perform.
+      </p>
+
+      <div class="hbtns">
+        <a href="#portfolio" class="btn-primary">View Projects</a>
+        <a href="https://wa.me/923477290072" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> Let's Talk</a>
+      </div>
+    </div>
+
+    <!-- RIGHT PHOTO -->
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <div class="hp-ring"></div>
+        <div class="hp-exp">5+ Years Experience</div>
+        <div class="hp-frame">
+          <!-- placeholder gradient if no photo uploaded -->
+          <div style="width:100%;height:100%;background:linear-gradient(160deg,#0c0c24,#060614);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:5rem;letter-spacing:4px;background:conic-gradient(from 200deg at 40% 50%,#04040a,#0c0c28,#0a0a20,#04040a);color:#00f5ff22;">MR</div>
+          <div class="hp-scan"></div>
+        </div>
+        <div class="hp-tl"></div><div class="hp-tr"></div>
+        <div class="hp-bl"></div><div class="hp-br"></div>
+        <div class="hp-badge b1"><span>🎨</span> UI/UX Design</div>
+        <div class="hp-badge b2"><span>⚡</span> WordPress Dev</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ===================== STATS ===================== -->
+<section id="stats">
+  <div class="wrap">
+    <div class="sg">
+      <div class="sitem reveal">
+        <div class="sn" data-t="50">0+</div>
+        <div class="sl">Projects Delivered</div>
+      </div>
+      <div class="sitem reveal" data-d="1">
+        <div class="sn" data-t="5">0+</div>
+        <div class="sl">Years Experience</div>
+      </div>
+      <div class="sitem reveal" data-d="2">
+        <div class="sn" data-t="10">0+</div>
+        <div class="sl">Countries Served</div>
+      </div>
+      <div class="sitem reveal" data-d="3">
+        <div class="sn" data-t="100">0+</div>
+        <div class="sl">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label reveal">About Me</div>
+    <div class="sec-title reveal"><span>The Designer</span> Behind The Pixels</div>
+    <div class="sec-line reveal"></div>
+    <div class="about-grid">
+      <div class="about-txt reveal">
+        <p>
+          Hey — I'm <strong>Hafiz Moeen Raza</strong>, a WordPress & UI/UX Designer based in <strong>Rahim Yar Khan, Pakistan</strong>. I've spent the last 5+ years turning client visions into high-performing digital products — websites that don't just look great, but actually convert visitors into customers.
+        </p>
+        <p>
+          My journey started with graphic design fundamentals at <strong>SICS Institute</strong>, deepened through a <strong>PSDF Certified Program</strong> in website design, and evolved into UI/UX prototyping through the <strong>E-Hunar program</strong>. Today, I bring that full-stack design perspective to every project — from wireframe to live deployment.
+        </p>
+        <p>
+          I specialize in <strong>real estate websites, eCommerce stores</strong>, and <strong>corporate business sites</strong>. My process is meticulous: pixel-perfect layouts, fast performance, mobile-first responsiveness, and a deep focus on user experience that keeps visitors engaged.
+        </p>
+        <p>
+          When I'm not designing, you'll find me exploring UI patterns in games, watching food aesthetics, or on the road exploring new places.
+        </p>
+        <div class="about-tags">
+          <span class="atag">Real Estate</span>
+          <span class="atag">eCommerce</span>
+          <span class="atag">Elementor Pro</span>
+          <span class="atag">WooCommerce</span>
+          <span class="atag">Figma</span>
+          <span class="atag">UX Research</span>
+          <span class="atag">Mobile-First</span>
+          <span class="atag">SEO Optimized</span>
+          <span class="atag">English · Urdu · Punjabi</span>
+        </div>
+      </div>
+      <div class="skill-list reveal" data-d="2">
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">WordPress & Elementor</span><span class="sk-pct">95%</span></div>
+          <div class="sk-track"><div class="skf c1" data-w="95"></div></div>
+        </div>
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">UI/UX Design (Figma)</span><span class="sk-pct">90%</span></div>
+          <div class="sk-track"><div class="skf c2" data-w="90"></div></div>
+        </div>
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">WooCommerce</span><span class="sk-pct">88%</span></div>
+          <div class="sk-track"><div class="skf c3" data-w="88"></div></div>
+        </div>
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">Real Estate Websites</span><span class="sk-pct">92%</span></div>
+          <div class="sk-track"><div class="skf c1" data-w="92"></div></div>
+        </div>
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">Adobe Photoshop / Illustrator</span><span class="sk-pct">85%</span></div>
+          <div class="sk-track"><div class="skf c2" data-w="85"></div></div>
+        </div>
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">Responsive / Mobile-First</span><span class="sk-pct">96%</span></div>
+          <div class="sk-track"><div class="skf c3" data-w="96"></div></div>
+        </div>
+        <div class="skr">
+          <div class="sk-head"><span class="sk-name">SEO & Performance Optimization</span><span class="sk-pct">80%</span></div>
+          <div class="sk-track"><div class="skf c1" data-w="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-label reveal">What I Do</div>
+    <div class="sec-title reveal">Services & <span>Expertise</span></div>
+    <div class="sec-line reveal"></div>
+    <div class="svc-grid">
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-icon" style="color:#00f5ff;"><i class="fa-brands fa-wordpress"></i></div>
+        <h3>WordPress Development</h3>
+        <p>Custom WordPress websites using Elementor Pro — fast, responsive, and built to your exact brand vision. From corporate sites to real estate portals.</p>
+      </div>
+      <div class="svc-card reveal" data-d="2">
+        <div class="svc-icon" style="color:#b400ff;"><i class="fa-solid fa-pen-ruler"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>Full user experience design in Figma — wireframes, prototypes, mockups, and design systems that prioritize usability and visual clarity.</p>
+      </div>
+      <div class="svc-card reveal" data-d="3">
+        <div class="svc-icon" style="color:#ff006e;"><i class="fa-solid fa-house-chimney"></i></div>
+        <h3>Real Estate Websites</h3>
+        <p>Specialized real estate portals with IDX/MLS integration, property listings, search filters, and lead capture — built to sell properties online.</p>
+      </div>
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-icon" style="color:#7fff00;"><i class="fa-brands fa-shopify"></i></div>
+        <h3>WooCommerce / eCommerce</h3>
+        <p>End-to-end WooCommerce stores — product pages, cart optimization, payment gateways, and mobile UX designed to maximize conversions.</p>
+      </div>
+      <div class="svc-card reveal" data-d="2">
+        <div class="svc-icon" style="color:#00f5ff;"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>Mobile-First & Responsive</h3>
+        <p>Every site I build is rigorously tested across all screen sizes, ensuring a flawless experience whether on desktop, tablet, or mobile.</p>
+      </div>
+      <div class="svc-card reveal" data-d="3">
+        <div class="svc-icon" style="color:#b400ff;"><i class="fa-solid fa-gauge-high"></i></div>
+        <h3>Website Maintenance & SEO</h3>
+        <p>Ongoing site management — plugin updates, performance optimization, SEO fundamentals, content updates, and responsiveness testing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="sec-label reveal">Past Work</div>
+    <div class="sec-title reveal">Featured <span>Projects</span></div>
+    <div class="sec-line reveal"></div>
+    <div class="pw-grid">
+      <div class="pw-card reveal" data-d="1" onclick="openLb(0)">
+        <img src="brain.png" alt="Brian Fadrowski Real Estate" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">Brian Fadrowski Real Estate</div>
+          <div class="pw-cat">Real Estate · Pennsylvania, USA</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="2" onclick="openLb(1)">
+        <img src="duhon.png" alt="Duhon Real Estate" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">Duhon Real Estate</div>
+          <div class="pw-cat">Real Estate · North Carolina, USA</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="3" onclick="openLb(2)">
+        <img src="investor.png" alt="Investor Deals" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">Investor Deals</div>
+          <div class="pw-cat">Real Estate Portal · Dubai, UAE</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="1" onclick="openLb(3)">
+        <img src="citi.png" alt="Citi Living Real Estate" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">Citi Living Real Estate</div>
+          <div class="pw-cat">Real Estate · New Jersey & New York, USA</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="2" onclick="openLb(4)">
+        <img src="sharma.png" alt="Sharma Real Estate" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">Sharma Real Estate</div>
+          <div class="pw-cat">Real Estate · Brussels, Belgium</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="3" onclick="openLb(5)">
+        <img src="shine.png" alt="Shine Life Real Estate" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">Shine Life Real Estate</div>
+          <div class="pw-cat">Real Estate · Dubai, UAE</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="1" onclick="openLb(6)">
+        <img src="true.png" alt="True Real Estate" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">True Real Estate</div>
+          <div class="pw-cat">Real Estate · Minnesota, USA</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="pw-card reveal" data-d="2" onclick="openLb(7)">
+        <img src="ayb.png" alt="AYB Art Store" loading="lazy">
+        <div class="pw-over">
+          <div class="pw-title">AYB — Art Store</div>
+          <div class="pw-cat">eCommerce · Pakistan</div>
+        </div>
+        <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lb">
+  <div class="lb-inner">
+    <div class="lb-close" onclick="closeLb()"><i class="fa-solid fa-xmark"></i></div>
+    <div class="lb-nav lb-prev" onclick="navLb(-1)"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="lb-nav lb-next" onclick="navLb(1)"><i class="fa-solid fa-chevron-right"></i></div>
+    <img id="lb-img" src="" alt="">
+    <div id="lb-cap"></div>
+  </div>
+</div>
+
+<div class="gdivide"></div>
+
+<!-- ===================== PROCESS ===================== -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-label reveal">How I Work</div>
+    <div class="sec-title reveal">My Design <span>Process</span></div>
+    <div class="sec-line reveal"></div>
+    <div class="proc-grid">
+      <div class="proc-item reveal" data-d="1">
+        <div class="proc-num">01</div>
+        <div class="proc-icon">🎯</div>
+        <h4>Discovery</h4>
+        <p>Deep dive into your goals, audience, competitors, and brand to define the project scope.</p>
+      </div>
+      <div class="proc-item reveal" data-d="2">
+        <div class="proc-num">02</div>
+        <div class="proc-icon">✏️</div>
+        <h4>Wireframing</h4>
+        <p>Structural layout in Figma — no colors yet, just clean UX architecture and user flow.</p>
+      </div>
+      <div class="proc-item reveal" data-d="3">
+        <div class="proc-num">03</div>
+        <div class="proc-icon">🎨</div>
+        <h4>UI Design</h4>
+        <p>High-fidelity mockups with brand colors, typography, imagery, and interactive prototypes.</p>
+      </div>
+      <div class="proc-item reveal" data-d="4">
+        <div class="proc-num">04</div>
+        <div class="proc-icon">⚡</div>
+        <h4>Development</h4>
+        <p>Pixel-perfect build in WordPress & Elementor Pro — optimized for speed and responsiveness.</p>
+      </div>
+      <div class="proc-item reveal" data-d="1">
+        <div class="proc-num">05</div>
+        <div class="proc-icon">🚀</div>
+        <h4>Launch & Support</h4>
+        <p>Go-live, cross-browser testing, SEO setup, and ongoing maintenance to keep things sharp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ===================== TOOLS ===================== -->
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-label reveal">My Toolkit</div>
+    <div class="sec-title reveal">Tools & <span>Technologies</span></div>
+    <div class="sec-line reveal"></div>
+    <div class="tools-grid">
+      <div class="tool-item reveal" data-d="1">
+        <i class="fa-brands fa-figma" style="color:#b400ff;"></i>
+        <span>Figma</span>
+      </div>
+      <div class="tool-item reveal" data-d="2">
+        <i class="fa-brands fa-wordpress" style="color:#00f5ff;"></i>
+        <span>WordPress</span>
+      </div>
+      <div class="tool-item reveal" data-d="3">
+        <i class="fa-solid fa-layer-group" style="color:#ff006e;"></i>
+        <span>Elementor</span>
+      </div>
+      <div class="tool-item reveal" data-d="1">
+        <i class="fa-brands fa-shopify" style="color:#7fff00;"></i>
+        <span>WooCommerce</span>
+      </div>
+      <div class="tool-item reveal" data-d="2">
+        <i class="fa-solid fa-bezier-curve" style="color:#b400ff;"></i>
+        <span>Illustrator</span>
+      </div>
+      <div class="tool-item reveal" data-d="3">
+        <i class="fa-solid fa-image" style="color:#00f5ff;"></i>
+        <span>Photoshop</span>
+      </div>
+      <div class="tool-item reveal" data-d="1">
+        <i class="fa-solid fa-palette" style="color:#ff006e;"></i>
+        <span>CorelDRAW</span>
+      </div>
+      <div class="tool-item reveal" data-d="2">
+        <i class="fa-solid fa-magnifying-glass-chart" style="color:#7fff00;"></i>
+        <span>SEO Tools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ===================== CONNECT ===================== -->
+<section id="connect">
+  <div class="wrap">
+    <div class="connect-inner">
+      <div class="sec-label reveal" style="text-align:center;">Get In Touch</div>
+      <div class="sec-title reveal" style="text-align:center;">Let's Build Something <span>Great</span></div>
+      <div class="sec-line reveal" style="margin:0 auto 30px;"></div>
+      <p class="reveal">
+        Whether you need a brand new WordPress website, a UI/UX design overhaul, or just want to explore ideas — I'm just a message away. Let's create digital experiences that people actually love.
+      </p>
+      <div class="social-row reveal">
+        <a href="https://wa.me/923477290072" target="_blank" class="sbtn wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/moeen-raza-68301a2a8/" target="_blank" class="sbtn li"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/moeenraza.design/" target="_blank" class="sbtn ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="mailto:moeen90075@gmail.com" class="sbtn"><i class="fa-solid fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACK TO TOP -->
+<button id="btt" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+/* ---- SPLASH ---- */
+(function(){
+  setTimeout(function(){
+    var sp = document.getElementById('splash');
+    if(!sp) return;
+    sp.classList.add('hide');
+    setTimeout(function(){ sp.remove(); }, 900);
+  }, 2800);
+})();
+
+/* ---- ROLE TEXT CYCLE ---- */
+(function(){
+  var roles = ['WordPress Designer', 'UI/UX Designer', 'Elementor Expert', 'Real Estate Specialist', 'Digital Experience Creator'];
+  var el = document.getElementById('role-text');
+  if(!el) return;
+  var i = 0;
+  function nextRole(){
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(10px)';
+    setTimeout(function(){
+      i = (i+1) % roles.length;
+      el.textContent = roles[i];
+      el.style.transition = 'opacity .4s, transform .4s';
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    }, 400);
+  }
+  el.style.transition = 'opacity .4s, transform .4s';
+  setInterval(nextRole, 2800);
+})();
+
+/* ---- PARTICLE BACKGROUND ---- */
+(function(){
+  var canvas = document.getElementById('particles');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var pts = [];
+  var NUM = 55;
+  for(var i=0; i<NUM; i++){
+    pts.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      vx: (Math.random()-.5)*.4,
+      vy: (Math.random()-.5)*.4,
+      r: Math.random()*1.5+.5,
+      c: Math.random() > .5 ? '0,245,255' : '180,0,255'
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0; i<pts.length; i++){
+      var p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0) p.x = canvas.width;
+      if(p.x > canvas.width) p.x = 0;
+      if(p.y < 0) p.y = canvas.height;
+      if(p.y > canvas.height) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba('+p.c+',.7)';
+      ctx.fill();
+      for(var j=i+1; j<pts.length; j++){
+        var q = pts[j];
+        var dx = p.x-q.x, dy = p.y-q.y;
+        var dist = Math.sqrt(dx*dx+dy*dy);
+        if(dist < 140){
+          ctx.beginPath();
+          ctx.moveTo(p.x,p.y);
+          ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle = 'rgba('+p.c+','+(1-dist/140)*.12+')';
+          ctx.lineWidth = .8;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ---- SCROLL REVEAL ---- */
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var d = parseInt(e.target.dataset.d || 0);
+        setTimeout(function(){ e.target.classList.add('vis'); }, d * 90);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+
+/* ---- SKILL BARS ---- */
+(function(){
+  var sio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var f = e.target.querySelector('.skf');
+        if(f) setTimeout(function(){ f.style.width = f.dataset.w + '%'; }, 100);
+        sio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.skr').forEach(function(r){ sio.observe(r); });
+})();
+
+/* ---- COUNTERS ---- */
+(function(){
+  function animCount(el, t){
+    var start = null, dur = 1400;
+    function step(ts){
+      if(!start) start = ts;
+      var prog = Math.min((ts-start)/dur, 1);
+      var ease = 1-Math.pow(1-prog,3);
+      el.textContent = Math.floor(ease*t)+'+'
+      if(prog<1) requestAnimationFrame(step);
+      else el.textContent = t+'+';
+    }
+    requestAnimationFrame(step);
+  }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        document.querySelectorAll('.sn').forEach(function(n){ animCount(n, parseInt(n.dataset.t)); });
+        cio.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  var st = document.getElementById('stats');
+  if(st) cio.observe(st);
+})();
+
+/* ---- LIGHTBOX ---- */
+var PROJECTS = [
+  { src: 'brain.png',    cap: 'Brian Fadrowski Real Estate — Pennsylvania, USA' },
+  { src: 'duhon.png',    cap: 'Duhon Real Estate — North Carolina, USA' },
+  { src: 'investor.png', cap: 'Investor Deals — Dubai, UAE' },
+  { src: 'citi.png',     cap: 'Citi Living Real Estate — New Jersey & New York, USA' },
+  { src: 'sharma.png',   cap: 'Sharma Real Estate — Brussels, Belgium' },
+  { src: 'shine.png',    cap: 'Shine Life Real Estate — Dubai, UAE' },
+  { src: 'true.png',     cap: 'True Real Estate — Minnesota, USA' },
+  { src: 'ayb.png',      cap: 'AYB — Ayesha Yousuf Bhatti Art Store, Pakistan' },
+];
+var lbIdx = 0;
+function setLb(i){
+  document.getElementById('lb-img').src = PROJECTS[i].src;
+  document.getElementById('lb-img').alt = PROJECTS[i].cap;
+  document.getElementById('lb-cap').textContent = PROJECTS[i].cap;
+}
+window.openLb = function(i){ lbIdx=i; setLb(i); document.getElementById('lb').classList.add('open'); document.body.style.overflow='hidden'; };
+window.closeLb = function(){ document.getElementById('lb').classList.remove('open'); document.body.style.overflow=''; };
+window.navLb = function(d){ lbIdx=(lbIdx+d+PROJECTS.length)%PROJECTS.length; setLb(lbIdx); };
+document.addEventListener('keydown', function(e){
+  var lb = document.getElementById('lb');
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLb();
+  if(e.key==='ArrowRight') navLb(1);
+  if(e.key==='ArrowLeft') navLb(-1);
+});
+document.getElementById('lb').addEventListener('click', function(e){ if(e.target===this) closeLb(); });
+
+/* ---- BACK TO TOP ---- */
+var btt = document.getElementById('btt');
+window.addEventListener('scroll', function(){ btt.classList.toggle('show', window.scrollY > 400); }, { passive: true });
+btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+/* ---- CARD TILT ---- */
+if(window.innerWidth > 768){
+  document.querySelectorAll('.svc-card, .proc-item, .tool-item').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      var x = (e.clientX-r.left)/r.width-.5;
+      var y = (e.clientY-r.top)/r.height-.5;
+      card.style.transform = 'perspective(600px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg) translateY(-5px)';
+    });
+    card.addEventListener('mouseleave', function(){ card.style.transform=''; });
+  });
+}
+
+/* ---- RIGHT CLICK DISABLE ---- */
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.onkeydown = function(e){
+  if(e.keyCode==123) return false;
+  if(e.ctrlKey&&e.shiftKey&&e.keyCode==='I'.charCodeAt(0)) return false;
+  if(e.ctrlKey&&e.keyCode==='U'.charCodeAt(0)) return false;
+};
+</script>
+</body>
+</html>
