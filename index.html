@@ -25,7 +25,8 @@
   --sf:     #0c0c1e;
   --sf2:    #111128;
   --tx:     #e8e8ff;
-  --txd:    #6a6a9a;
+  /* FIX: txd was #6a6a9a — too dim. Now brighter for readability */
+  --txd:    #a0a0cc;
   --grad1:  linear-gradient(135deg, #00f5ff, #b400ff);
   --grad2:  linear-gradient(135deg, #ff006e, #b400ff);
   --grad3:  linear-gradient(135deg, #00f5ff, #7fff00);
@@ -72,7 +73,6 @@ img { display: block; max-width: 100%; }
 /* ===== FIXED BG LAYERS ===== */
 #bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
-/* Noise texture overlay */
 #noise {
   position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -100,7 +100,6 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   padding: 80px 20px 60px; overflow: hidden; position: relative;
 }
 
-/* Rotating orb behind hero */
 .orb-wrap {
   position: absolute; width: 700px; height: 700px;
   top: 50%; left: 50%; transform: translate(-50%,-50%);
@@ -157,7 +156,6 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
 .adot { width: 7px; height: 7px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 8px var(--neon); animation: pulse 1.5s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.3;transform:scale(.7);} }
 
-/* Name typewriter effect */
 .hname-wrap { overflow: hidden; margin-bottom: 8px; }
 .hname {
   font-family: 'Bebas Neue', sans-serif;
@@ -209,19 +207,20 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   animation: float 6s ease-in-out infinite;
 }
 @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
-.hp-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* CHANGE 1: moeen.png as hero photo */
+.hp-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
 .hp-scan {
   position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: 18px;
   background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,245,255,.015) 3px, rgba(0,245,255,.015) 4px);
 }
-/* corner brackets */
 .hp-tl,.hp-tr,.hp-bl,.hp-br { position: absolute; width: 22px; height: 22px; z-index: 4; }
 .hp-tl { top: -1px; left: -1px; border-top: 2px solid var(--neon); border-left: 2px solid var(--neon); }
 .hp-tr { top: -1px; right: -1px; border-top: 2px solid var(--neon2); border-right: 2px solid var(--neon2); }
 .hp-bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--neon2); border-left: 2px solid var(--neon2); }
 .hp-br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--neon); border-right: 2px solid var(--neon); }
 
-/* floating badges */
 .hp-badge {
   position: absolute; z-index: 5;
   background: rgba(6,6,16,.85); backdrop-filter: blur(10px);
@@ -235,7 +234,6 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
 .hp-badge span { font-size: 1.2rem; }
 @media (max-width: 880px) { .hp-badge { display: none; } }
 
-/* exp tag */
 .hp-exp {
   position: absolute; top: -16px; left: 50%; transform: translateX(-50%); z-index: 6;
   font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 3px;
@@ -243,7 +241,6 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   white-space: nowrap; font-weight: 700; box-shadow: 0 0 16px #00f5ff50;
 }
 
-/* spin ring around photo */
 .hp-ring {
   position: absolute; inset: -20px; border-radius: 24px;
   border: 1px solid transparent;
@@ -256,27 +253,28 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
 .sg { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
 .sitem { text-align: center; }
 .sn { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; line-height: 1; background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.sl { font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 4px; color: var(--txd); margin-top: 5px; text-transform: uppercase; }
+/* FIX: stat labels were barely visible */
+.sl { font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 4px; color: #b8b8d8; margin-top: 5px; text-transform: uppercase; }
 
 /* ===== ABOUT ===== */
 #about { background: var(--bg2); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
-.about-txt p { font-size: 1rem; color: var(--tx); line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
+/* FIX: about text was dim — now clearly visible */
+.about-txt p { font-size: 1rem; color: #d8d8f0; line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
 .about-txt p strong { color: var(--neon); font-weight: 500; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .atag {
   padding: 6px 16px; border: 1px solid #00f5ff25; border-radius: 30px;
   font-family: 'Space Mono', monospace; font-size: .55rem; letter-spacing: 2px;
-  color: var(--txd); text-transform: uppercase; transition: all .3s;
+  color: #b0b0d0; text-transform: uppercase; transition: all .3s;
 }
 .atag:hover { border-color: var(--neon); color: var(--neon); background: #00f5ff08; }
 
 /* Skills side */
 .skill-list { display: flex; flex-direction: column; gap: 20px; }
-.skr { }
 .sk-head { display: flex; justify-content: space-between; margin-bottom: 8px; }
-.sk-name { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: 2px; color: var(--tx); text-transform: uppercase; }
+.sk-name { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: 2px; color: #d0d0f0; text-transform: uppercase; }
 .sk-pct { font-family: 'Space Mono', monospace; font-size: .6rem; color: var(--neon); }
 .sk-track { height: 3px; background: var(--sf2); border-radius: 2px; overflow: hidden; }
 .skf { height: 100%; width: 0; border-radius: 2px; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
@@ -304,7 +302,8 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   font-size: 1.4rem; background: var(--sf2); border: 1px solid #00f5ff15;
 }
 .svc-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--tx); margin-bottom: 10px; }
-.svc-card p { font-size: .9rem; color: var(--txd); line-height: 1.7; }
+/* FIX: service card description text */
+.svc-card p { font-size: .9rem; color: #a8a8c8; line-height: 1.7; }
 
 /* ===== PORTFOLIO ===== */
 #portfolio { background: var(--bg); }
@@ -323,7 +322,7 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   opacity: 0; transition: opacity .35s;
 }
 .pw-card:hover .pw-over { opacity: 1; }
-.pw-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--tx); margin-bottom: 4px; }
+.pw-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
 .pw-cat { font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: 3px; color: var(--neon); text-transform: uppercase; }
 .pw-open { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: var(--grad1); display: flex; align-items: center; justify-content: center; color: #04040a; font-size: .85rem; opacity: 0; transform: scale(.7); transition: all .3s; }
 .pw-card:hover .pw-open { opacity: 1; transform: scale(1); }
@@ -362,7 +361,8 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
 }
 .proc-icon { font-size: 1.6rem; margin-bottom: 14px; }
 .proc-item h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--tx); margin-bottom: 8px; }
-.proc-item p { font-size: .88rem; color: var(--txd); line-height: 1.6; }
+/* FIX: process description text */
+.proc-item p { font-size: .88rem; color: #a8a8c8; line-height: 1.6; }
 
 /* ===== TOOLS ===== */
 #tools { background: var(--bg2); }
@@ -374,12 +374,14 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
 }
 .tool-item:hover { border-color: #00f5ff35; transform: translateY(-3px); box-shadow: 0 8px 24px #00f5ff10; }
 .tool-item i { font-size: 1.6rem; }
-.tool-item span { font-family: 'Space Mono', monospace; font-size: .52rem; letter-spacing: 2px; color: var(--txd); text-transform: uppercase; }
+/* FIX: tool label text */
+.tool-item span { font-family: 'Space Mono', monospace; font-size: .52rem; letter-spacing: 2px; color: #b0b0d0; text-transform: uppercase; }
 
 /* ===== CONNECT ===== */
 #connect { background: var(--bg3); text-align: center; }
 .connect-inner { max-width: 700px; margin: 0 auto; }
-.connect-inner p { font-size: 1.05rem; color: var(--txd); line-height: 1.8; margin-bottom: 36px; font-weight: 300; }
+/* FIX: connect paragraph text */
+.connect-inner p { font-size: 1.05rem; color: #b0b0d0; line-height: 1.8; margin-bottom: 36px; font-weight: 300; }
 .social-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .sbtn {
   display: flex; align-items: center; gap: 10px; padding: 13px 24px;
@@ -408,7 +410,6 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   .orb-dot { display: none; } .orb-dot2 { display: none; }
 }
 
-/* ===== TECH BG ANIMATION CANVAS ===== */
 .hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 </style>
 </head>
@@ -421,17 +422,13 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
   <div class="sp-sub">Initializing Portfolio...</div>
 </div>
 
-<!-- BG NOISE -->
 <div id="noise"></div>
-
-<!-- CANVAS for particle bg -->
 <canvas id="bg-canvas"></canvas>
 
 <!-- ===================== HERO ===================== -->
 <section id="hero">
   <canvas class="hero-particles" id="particles"></canvas>
 
-  <!-- Rotating orb background -->
   <div class="orb-wrap">
     <div class="orb"></div>
     <div class="orb2"></div>
@@ -459,14 +456,13 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
       </div>
     </div>
 
-    <!-- RIGHT PHOTO -->
+    <!-- RIGHT PHOTO — CHANGE 1: moeen.png -->
     <div class="hero-right">
       <div class="hero-photo-wrap">
         <div class="hp-ring"></div>
         <div class="hp-exp">5+ Years Experience</div>
         <div class="hp-frame">
-          <!-- placeholder gradient if no photo uploaded -->
-          <div style="width:100%;height:100%;background:linear-gradient(160deg,#0c0c24,#060614);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:5rem;letter-spacing:4px;background:conic-gradient(from 200deg at 40% 50%,#04040a,#0c0c28,#0a0a20,#04040a);color:#00f5ff22;">MR</div>
+          <img src="moeen.png" alt="Hafiz Moeen Raza">
           <div class="hp-scan"></div>
         </div>
         <div class="hp-tl"></div><div class="hp-tr"></div>
@@ -618,6 +614,7 @@ section { position: relative; z-index: 1; padding: 90px 20px; }
 <div class="gdivide"></div>
 
 <!-- ===================== PORTFOLIO ===================== -->
+<!-- CHANGE 2: Images use relative paths (same folder). For GitHub Pages, these will work as-is. -->
 <section id="portfolio">
   <div class="wrap">
     <div class="sec-label reveal">Past Work</div>
