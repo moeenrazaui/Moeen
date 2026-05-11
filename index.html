@@ -6,18 +6,13 @@
 <title>Hafiz Moeen Raza | WordPress & UI/UX Designer</title>
 <meta name="description" content="Hafiz Moeen Raza — WordPress & UI/UX Designer from Rahim Yar Khan, Pakistan. Expert in Elementor, Real Estate Websites, Figma, WooCommerce. 5+ years experience.">
 <meta name="author" content="Hafiz Moeen Raza">
-
-<!-- PERFORMANCE: Preload critical resources -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
-
-<!-- PERFORMANCE: FA loaded async -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
 <style>
-/* ===== CRITICAL CSS — inlined for fastest render ===== */
 :root {
   --neon:  #00f5ff;
   --neon2: #b400ff;
@@ -37,31 +32,18 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);color:var(--tx);
-  font-family:'Syne',system-ui,sans-serif;
-  font-size:16px;overflow-x:hidden;line-height:1.65;
-}
+body{background:var(--bg);color:var(--tx);font-family:'Syne',system-ui,sans-serif;font-size:16px;overflow-x:hidden;line-height:1.65}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
-/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--neon2);border-radius:2px}
 
-/* ===== SPLASH ===== */
-#splash{
-  position:fixed;inset:0;z-index:9999;background:var(--bg);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  transition:opacity .9s,transform .9s;
-}
+/* SPLASH */
+#splash{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .9s,transform .9s}
 #splash.hide{opacity:0;transform:scale(1.04);pointer-events:none}
-.sp-logo{
-  font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:8px;
-  background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  animation:pop .8s cubic-bezier(.175,.885,.32,1.275) both;
-}
+.sp-logo{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:8px;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pop .8s cubic-bezier(.175,.885,.32,1.275) both}
 @keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
 .sp-bar{width:220px;height:2px;background:var(--sf2);border-radius:2px;overflow:hidden;margin-top:24px;animation:fadeup .6s .4s both}
 .sp-fill{height:100%;width:0;background:var(--grad1);animation:lbar 2.4s .5s ease forwards;box-shadow:0 0 12px var(--neon)}
@@ -69,13 +51,10 @@ img{display:block;max-width:100%}
 .sp-sub{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:5px;color:var(--txd);margin-top:12px;text-transform:uppercase;animation:fadeup .6s .8s both}
 @keyframes fadeup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-/* ===== NOISE BG ===== */
-#noise{
-  position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.03;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
+/* NOISE */
+#noise{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
 
-/* ===== LAYOUT ===== */
+/* LAYOUT */
 section{position:relative;z-index:1;padding:90px 20px}
 .wrap{max-width:1140px;margin:0 auto}
 .sec-label{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:6px;color:var(--neon);text-transform:uppercase;margin-bottom:12px}
@@ -89,11 +68,8 @@ section{position:relative;z-index:1;padding:90px 20px}
 .reveal[data-d="3"]{transition-delay:.24s}
 .reveal[data-d="4"]{transition-delay:.32s}
 
-/* ===== HERO ===== */
-#hero{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  padding:80px 20px 60px;overflow:hidden;position:relative;
-}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 20px 60px;overflow:hidden;position:relative}
 .orb-wrap{position:absolute;width:700px;height:700px;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
 .orb{position:absolute;inset:0;border-radius:50%;border:1px solid transparent;background:conic-gradient(from 0deg,transparent 60%,#00f5ff22,#b400ff22,transparent 80%) border-box;animation:orbspin 24s linear infinite}
 .orb2{position:absolute;inset:60px;border-radius:50%;border:1px dashed #b400ff15;animation:orbspin 36s linear infinite reverse}
@@ -124,7 +100,6 @@ section{position:relative;z-index:1;padding:90px 20px}
 .btn-outline{padding:13px 28px;border-radius:6px;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;border:1px solid #00f5ff40;color:var(--neon);background:transparent;transition:all .3s}
 .btn-outline:hover{background:#00f5ff10;box-shadow:0 0 20px #00f5ff25;transform:translateY(-3px)}
 
-/* Hero Photo */
 .hero-photo-wrap{position:relative;width:320px;height:420px;animation:fadeup 1s .3s both}
 @media(max-width:480px){.hero-photo-wrap{width:240px;height:320px}}
 .hp-frame{width:100%;height:100%;border-radius:18px;overflow:hidden;border:1px solid #00f5ff25;box-shadow:0 0 50px #00f5ff15,0 0 100px #b400ff10;position:relative;z-index:2;background:var(--sf);animation:float 6s ease-in-out infinite}
@@ -144,14 +119,67 @@ section{position:relative;z-index:1;padding:90px 20px}
 .hp-exp{position:absolute;top:-16px;left:50%;transform:translateX(-50%);z-index:6;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:3px;background:var(--grad1);color:#04040a;padding:5px 16px;border-radius:20px;white-space:nowrap;font-weight:700;box-shadow:0 0 16px #00f5ff50}
 .hp-ring{position:absolute;inset:-20px;border-radius:24px;border:1px solid transparent;background:conic-gradient(from 0deg,transparent 70%,#00f5ff40,transparent 90%) border-box;animation:orbspin 8s linear infinite;z-index:1}
 
-/* ===== STATS ===== */
+/* ===== TICKER ===== */
+#ticker{
+  position:relative;z-index:1;
+  padding:0;
+  background:var(--sf);
+  border-top:1px solid rgba(0,245,255,.08);
+  border-bottom:1px solid rgba(0,245,255,.08);
+  overflow:hidden;
+  height:64px;
+  display:flex;align-items:center;
+}
+.ticker-track{
+  display:flex;align-items:center;gap:0;
+  animation:tickerScroll 32s linear infinite;
+  white-space:nowrap;
+  will-change:transform;
+}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.ticker-pill{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:8px 20px;
+  margin:0 8px;
+  border-radius:30px;
+  border:1px solid rgba(0,245,255,.18);
+  background:rgba(0,245,255,.05);
+  backdrop-filter:blur(6px);
+  font-family:'Space Mono',monospace;
+  font-size:.58rem;
+  letter-spacing:3px;
+  color:var(--txd);
+  text-transform:uppercase;
+  flex-shrink:0;
+  transition:all .25s;
+}
+.ticker-pill:hover{border-color:var(--neon);color:var(--neon);background:rgba(0,245,255,.1)}
+.ticker-pill i{font-size:.75rem;color:var(--neon)}
+.ticker-pill.p2 i{color:var(--neon2)}
+.ticker-pill.p2{border-color:rgba(180,0,255,.18);background:rgba(180,0,255,.05)}
+.ticker-pill.p2:hover{border-color:var(--neon2);color:var(--neon2);background:rgba(180,0,255,.1)}
+.ticker-pill.p3 i{color:var(--neon3)}
+.ticker-pill.p3{border-color:rgba(255,0,110,.18);background:rgba(255,0,110,.05)}
+.ticker-pill.p3:hover{border-color:var(--neon3);color:var(--neon3);background:rgba(255,0,110,.1)}
+.ticker-pill.p4 i{color:var(--neon4)}
+.ticker-pill.p4{border-color:rgba(127,255,0,.18);background:rgba(127,255,0,.05)}
+.ticker-sep{
+  display:inline-flex;align-items:center;
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(0,245,255,.3);
+  margin:0 4px;flex-shrink:0;
+}
+
+/* STATS */
 #stats{padding:50px 20px;background:var(--sf);border-top:1px solid #00f5ff10;border-bottom:1px solid #00f5ff10}
 .sg{display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
 .sitem{text-align:center}
 .sn{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:1;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sl{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--txd);margin-top:5px;text-transform:uppercase}
 
-/* ===== ABOUT ===== */
+/* ABOUT */
 #about{background:var(--bg2)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr}}
@@ -170,7 +198,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 .skf.c2{background:var(--grad2);box-shadow:0 0 8px var(--neon2)}
 .skf.c3{background:var(--grad3);box-shadow:0 0 8px var(--neon4)}
 
-/* ===== SERVICES ===== */
+/* SERVICES */
 #services{background:var(--bg3)}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
 .svc-card{background:var(--sf);border:1px solid #00f5ff12;border-radius:14px;padding:32px 26px;transition:all .35s;position:relative;overflow:hidden}
@@ -193,7 +221,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 .svc-ai-tech{display:flex;flex-wrap:wrap;gap:8px}
 .svc-ai-tech span{padding:5px 14px;border:1px solid #00f5ff25;border-radius:20px;font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--neon);text-transform:uppercase;background:#00f5ff08}
 
-/* ===== PORTFOLIO ===== */
+/* PORTFOLIO */
 #portfolio{background:var(--bg)}
 .pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .pw-card{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid #00f5ff10;aspect-ratio:16/10;transition:all .35s}
@@ -207,79 +235,25 @@ section{position:relative;z-index:1;padding:90px 20px}
 .pw-open{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:var(--grad1);display:flex;align-items:center;justify-content:center;color:#04040a;font-size:.9rem;opacity:0;transform:scale(.7);transition:all .3s}
 .pw-card:hover .pw-open{opacity:1;transform:scale(1)}
 
-/* ===== LIGHTBOX — FIXED NORMAL SIZE ===== */
-#lb{
-  position:fixed;inset:0;z-index:9000;
-  background:rgba(2,2,8,.97);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;transition:opacity .3s;
-  backdrop-filter:blur(12px);
-}
+/* LIGHTBOX */
+#lb{position:fixed;inset:0;z-index:9000;background:rgba(2,2,8,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(12px)}
 #lb.open{opacity:1;pointer-events:all}
-
-.lb-topbar{
-  position:absolute;top:0;left:0;right:0;
-  padding:14px 18px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(180deg,rgba(4,4,10,.95) 0%,transparent 100%);
-  z-index:10;
-}
+.lb-topbar{position:absolute;top:0;left:0;right:0;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(4,4,10,.95) 0%,transparent 100%);z-index:10}
 #lb-cap{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:2px;color:var(--neon);text-transform:uppercase;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #lb-counter{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:2px;color:var(--txdd);margin-right:10px}
 .lb-close{width:38px;height:38px;border-radius:50%;background:rgba(12,12,30,.85);border:1px solid #00f5ff25;color:var(--tx);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:all .3s;flex-shrink:0}
 .lb-close:hover{border-color:var(--neon3);color:var(--neon3)}
-
-/* Image area — normal fit, no forced zoom */
-.lb-img-wrap{
-  position:absolute;
-  top:58px;left:0;right:0;bottom:72px;
-  overflow:auto;
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  -webkit-overflow-scrolling:touch;
-  touch-action:pan-x pan-y;
-  cursor:grab;
-  padding:16px;
-}
+.lb-img-wrap{position:absolute;top:58px;left:0;right:0;bottom:72px;overflow:auto;display:flex;align-items:flex-start;justify-content:center;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;cursor:grab;padding:16px}
 .lb-img-wrap:active{cursor:grabbing}
-
-#lb-img{
-  display:block;
-  /* FIXED: normal fit — fill width of container */
-  width:100%;
-  max-width:960px;
-  height:auto;
-  border-radius:6px;
-  border:1px solid #00f5ff20;
-  box-shadow:0 0 40px #00f5ff15;
-  transition:opacity .2s,transform .3s;
-  flex-shrink:0;
-  /* zoom level managed via JS transform */
-  transform-origin:top center;
-}
-
-/* Zoom hint badge */
-.lb-zoom-hint{
-  position:absolute;
-  bottom:82px;left:50%;transform:translateX(-50%);
-  font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:3px;
-  color:#fff;text-transform:uppercase;
-  background:rgba(0,245,255,.12);
-  border:1px solid rgba(0,245,255,.25);
-  padding:5px 14px;border-radius:20px;
-  pointer-events:none;white-space:nowrap;z-index:11;
-  opacity:0;transition:opacity .4s;
-}
-.lb-zoom-hint.show{opacity:1}
-
-/* Zoom buttons */
+#lb-img{display:block;width:100%;max-width:960px;height:auto;border-radius:6px;border:1px solid #00f5ff20;box-shadow:0 0 40px #00f5ff15;transition:opacity .2s,transform .3s;flex-shrink:0;transform-origin:top center}
 .lb-zoom-btns{position:absolute;right:14px;top:68px;z-index:11;display:flex;flex-direction:column;gap:8px}
 .lb-zbtn{width:36px;height:36px;border-radius:8px;background:rgba(12,12,30,.85);border:1px solid #00f5ff25;color:var(--neon);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;transition:all .25s;-webkit-tap-highlight-color:transparent;user-select:none}
 .lb-zbtn:hover,.lb-zbtn:active{background:#00f5ff18;border-color:var(--neon)}
-
-/* Bottom nav */
+.lb-zoom-hint{position:absolute;bottom:82px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:3px;color:#fff;text-transform:uppercase;background:rgba(0,245,255,.12);border:1px solid rgba(0,245,255,.25);padding:5px 14px;border-radius:20px;pointer-events:none;white-space:nowrap;z-index:11;opacity:0;transition:opacity .4s}
+.lb-zoom-hint.show{opacity:1}
+.lb-scroll-pulse{position:absolute;bottom:82px;right:14px;z-index:11;width:32px;height:32px;border-radius:50%;background:rgba(0,245,255,.12);border:1px solid rgba(0,245,255,.3);display:flex;align-items:center;justify-content:center;color:var(--neon);font-size:.7rem;opacity:0;transition:opacity .4s;animation:scrollpulse 1.5s ease-in-out infinite}
+.lb-scroll-pulse.show{opacity:1}
+@keyframes scrollpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 .lb-botbar{position:absolute;bottom:0;left:0;right:0;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(0deg,rgba(4,4,10,.95) 0%,transparent 100%);z-index:10}
 .lb-nav{width:42px;height:42px;border-radius:50%;background:rgba(12,12,30,.85);border:1px solid #00f5ff25;color:var(--neon);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:all .3s;flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .lb-nav:hover,.lb-nav:active{background:#00f5ff15;border-color:var(--neon)}
@@ -289,263 +263,256 @@ section{position:relative;z-index:1;padding:90px 20px}
 .lb-thumb img{width:100%;height:100%;object-fit:cover}
 .lb-thumb.active{opacity:1;border-color:var(--neon);box-shadow:0 0 10px #00f5ff40}
 
-/* Mobile auto-scroll pulse indicator */
-.lb-scroll-pulse{
-  position:absolute;
-  bottom:82px;right:14px;
-  z-index:11;
-  width:32px;height:32px;border-radius:50%;
-  background:rgba(0,245,255,.12);
-  border:1px solid rgba(0,245,255,.3);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--neon);font-size:.7rem;
-  opacity:0;transition:opacity .4s;
-  animation:scrollpulse 1.5s ease-in-out infinite;
+/* ===== PRICING — DARK GLASSMORPHISM ===== */
+#pricing{
+  background:var(--bg2);
+  position:relative;
+  overflow:hidden;
 }
-.lb-scroll-pulse.show{opacity:1}
-@keyframes scrollpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+/* Ambient glow orbs behind cards */
+#pricing::before{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,245,255,.06) 0%,transparent 70%);
+  top:-100px;left:-150px;pointer-events:none;z-index:0;
+}
+#pricing::after{
+  content:'';position:absolute;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(180,0,255,.07) 0%,transparent 70%);
+  bottom:-80px;right:-100px;pointer-events:none;z-index:0;
+}
 
-/* ===== PRICING ===== */
-#pricing{background:var(--bg2)}
+.pricing-wrap{position:relative;z-index:1}
 .pricing-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:28px;align-items:stretch;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  align-items:start;
 }
+@media(max-width:960px){.pricing-grid{grid-template-columns:1fr}}
 
+/* --- Base card --- */
 .plan-card{
-  background:#0e0e22;
-  border:1px solid rgba(0,245,255,.12);
-  border-radius:20px;
-  padding:38px 32px 34px;
-  position:relative;overflow:hidden;
-  transition:transform .35s,box-shadow .35s,border-color .35s;
+  position:relative;
+  border-radius:24px;
+  padding:40px 32px 36px;
+  overflow:hidden;
   display:flex;flex-direction:column;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;
+
+  /* Glassmorphism */
+  background:rgba(12,12,30,.55);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:0 8px 32px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06);
 }
 .plan-card:hover{
-  border-color:rgba(0,245,255,.35);
-  transform:translateY(-7px);
-  box-shadow:0 20px 60px rgba(0,245,255,.1);
+  transform:translateY(-10px);
+  box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 40px rgba(0,245,255,.08),inset 0 1px 0 rgba(255,255,255,.1);
 }
 
-/* Popular card — cyan glow */
+/* Noise texture overlay on each card */
+.plan-card::before{
+  content:'';position:absolute;inset:0;border-radius:24px;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.025;pointer-events:none;z-index:0;
+}
+.plan-card>*{position:relative;z-index:1}
+
+/* Popular card — highlighted */
 .plan-card--pop{
-  border-color:rgba(0,245,255,.4);
-  background:linear-gradient(160deg,#0d1428,#0a0e1f);
-  box-shadow:0 0 50px rgba(0,245,255,.12),0 0 100px rgba(180,0,255,.06);
+  background:rgba(10,14,35,.7);
+  border-color:rgba(0,245,255,.22);
+  box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 60px rgba(0,245,255,.1),0 0 120px rgba(180,0,255,.06),inset 0 1px 0 rgba(0,245,255,.15);
+}
+.plan-card--pop:hover{
+  box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 80px rgba(0,245,255,.18),0 0 160px rgba(180,0,255,.1),inset 0 1px 0 rgba(0,245,255,.2);
 }
 
+/* Enterprise card */
+.plan-card.plan-enterprise{
+  background:rgba(14,8,24,.6);
+  border-color:rgba(180,0,255,.15);
+  box-shadow:0 8px 32px rgba(0,0,0,.45),0 0 50px rgba(180,0,255,.08),inset 0 1px 0 rgba(180,0,255,.1);
+}
+.plan-card.plan-enterprise:hover{
+  box-shadow:0 24px 70px rgba(0,0,0,.5),0 0 80px rgba(180,0,255,.16),inset 0 1px 0 rgba(180,0,255,.18);
+}
+
+/* Glow line at top of popular */
+.plan-card--pop .plan-glow-line{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#00f5ff,#b400ff,transparent);
+  border-radius:24px 24px 0 0;z-index:2;
+}
+.plan-enterprise .plan-glow-line{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#b400ff,#ff006e,transparent);
+  border-radius:24px 24px 0 0;z-index:2;
+}
+
+/* Popular badge */
 .plan-pop-badge{
-  position:absolute;top:22px;right:22px;
+  position:absolute;top:20px;right:20px;
   font-family:'Space Mono',monospace;
-  font-size:.62rem;           /* READABLE */
-  letter-spacing:2px;
+  font-size:.58rem;letter-spacing:2px;
   background:linear-gradient(135deg,#00f5ff,#b400ff);
-  color:#04040a;
-  padding:5px 16px;border-radius:20px;
-  font-weight:700;text-transform:uppercase;
+  color:#04040a;padding:5px 14px;border-radius:20px;
+  font-weight:700;text-transform:uppercase;z-index:3;
+  box-shadow:0 4px 16px rgba(0,245,255,.4);
 }
 
-/* Tier label */
+/* Tier */
 .plan-tier{
   font-family:'Space Mono',monospace;
-  font-size:.72rem;            /* READABLE — was .58rem */
-  letter-spacing:4px;
-  color:#a0a0c0;               /* brighter */
-  text-transform:uppercase;
-  margin-bottom:14px;
+  font-size:.68rem;letter-spacing:4px;
+  color:rgba(200,200,232,.55);
+  text-transform:uppercase;margin-bottom:16px;
 }
 
 /* Price */
 .plan-price{
   font-family:'Bebas Neue',sans-serif;
-  font-size:3.8rem;line-height:1;margin-bottom:8px;
-  background:linear-gradient(135deg,#00f5ff,#4af7ff);
+  font-size:4rem;line-height:1;margin-bottom:4px;
+  background:linear-gradient(135deg,#00f5ff,#7de8f0);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:2px;
 }
 .plan-card--pop .plan-price{
-  background:linear-gradient(135deg,#00f5ff,#b400ff);
+  background:linear-gradient(135deg,#00f5ff,#c060ff);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
-.plan-card.plan-enterprise .plan-price{
-  background:linear-gradient(135deg,#ff006e,#b400ff);
+.plan-enterprise .plan-price{
+  background:linear-gradient(135deg,#c060ff,#ff4499);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  font-size:2.8rem;letter-spacing:3px;
+  font-size:2.8rem;letter-spacing:4px;
 }
+.plan-price-suffix{
+  font-family:'Syne',sans-serif;
+  font-size:1.4rem;font-weight:800;
+  -webkit-text-fill-color:rgba(0,245,255,.7);
+  vertical-align:super;
+}
+.plan-card--pop .plan-price-suffix{-webkit-text-fill-color:rgba(180,0,255,.8)}
 
-/* Subtitle */
+/* Sub */
 .plan-sub{
-  font-size:.97rem;            /* READABLE — was .88rem */
-  color:#c0c0e0;               /* brighter */
-  margin-bottom:26px;
-  line-height:1.6;
+  font-size:.95rem;color:rgba(200,200,232,.65);
+  line-height:1.65;margin-bottom:28px;
 }
 
+/* Divider */
 .plan-divider{
   height:1px;
-  background:linear-gradient(90deg,transparent,rgba(0,245,255,.2),transparent);
-  margin-bottom:26px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+  margin-bottom:28px;
+}
+.plan-card--pop .plan-divider{
+  background:linear-gradient(90deg,transparent,rgba(0,245,255,.2),rgba(180,0,255,.15),transparent);
 }
 
-/* Features list */
-.plan-features{
-  list-style:none;display:flex;flex-direction:column;
-  gap:14px;margin-bottom:28px;flex:1;
+/* Features */
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:28px;flex:1}
+.plan-features li{display:flex;gap:12px;align-items:flex-start;font-size:.94rem;color:rgba(220,220,248,.75);line-height:1.5}
+.plan-features li .feat-check{
+  width:18px;height:18px;border-radius:5px;flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.6rem;
+  background:rgba(0,245,255,.1);border:1px solid rgba(0,245,255,.25);
+  color:#00f5ff;
 }
-.plan-features li{
-  display:flex;gap:12px;align-items:flex-start;
-  font-size:.97rem;            /* READABLE — was .9rem */
-  color:#d0d0f0;               /* brighter */
-  line-height:1.55;
-}
-.plan-features li i{
-  color:#00f5ff;font-size:.78rem;
-  margin-top:3px;flex-shrink:0;
-}
-.plan-card--pop .plan-features li i{color:#00f5ff}
-.plan-card.plan-enterprise .plan-features li i{color:#b400ff}
-.plan-features li strong{
-  color:#ffffff;               /* pure white for feature names */
-  font-weight:700;
-}
-.plan-features li .feat-note{
-  display:block;
-  font-size:.82rem;            /* READABLE — was .78rem */
-  color:#a0a0c0;               /* clearer muted */
-  margin-top:3px;
-}
+.plan-card--pop .plan-features li .feat-check{background:rgba(0,245,255,.12);border-color:rgba(0,245,255,.3);color:#00f5ff}
+.plan-enterprise .plan-features li .feat-check{background:rgba(180,0,255,.12);border-color:rgba(180,0,255,.3);color:#cc66ff}
+.plan-features li strong{color:rgba(240,240,255,.92);font-weight:700}
+.plan-features li .feat-note{display:block;font-size:.8rem;color:rgba(168,168,204,.55);margin-top:2px}
 
-/* ── Support badge — COMPLETELY REDESIGNED ── */
+/* Support badge */
 .plan-support{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px 18px;           /* bigger */
-  border-radius:12px;
-  margin-bottom:22px;
-  background:rgba(0,245,255,.06);
-  border:1px solid rgba(0,245,255,.22);
+  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;border-radius:14px;margin-bottom:24px;
+  background:rgba(0,245,255,.05);
+  border:1px solid rgba(0,245,255,.12);
+  backdrop-filter:blur(8px);
 }
 .plan-support-icon{
-  width:34px;height:34px;border-radius:8px;
-  background:rgba(0,245,255,.12);
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(0,245,255,.1);
   display:flex;align-items:center;justify-content:center;
-  font-size:1rem;flex-shrink:0;
-  color:#00f5ff;
+  font-size:1rem;flex-shrink:0;color:#00f5ff;
 }
 .plan-support-text{display:flex;flex-direction:column;gap:2px}
-.plan-support-label{
-  font-family:'Space Mono',monospace;
-  font-size:.62rem;            /* READABLE */
-  letter-spacing:2px;
-  color:#80a0b0;               /* muted label */
-  text-transform:uppercase;
-}
-.plan-support-value{
-  font-family:'Syne',sans-serif;
-  font-size:1rem;              /* BIG & CLEAR */
-  font-weight:700;
-  color:#ffffff;               /* pure white */
-  line-height:1.2;
-}
+.plan-support-label{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:2px;color:rgba(160,160,200,.5);text-transform:uppercase}
+.plan-support-value{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:rgba(240,240,255,.9)}
+.plan-card--pop .plan-support{background:rgba(0,245,255,.06);border-color:rgba(0,245,255,.18)}
+.plan-enterprise .plan-support{background:rgba(180,0,255,.06);border-color:rgba(180,0,255,.18)}
+.plan-enterprise .plan-support-icon{background:rgba(180,0,255,.12);color:#cc66ff}
 
-/* Popular card support — purple tint */
-.plan-card--pop .plan-support{
-  background:rgba(180,0,255,.07);
-  border-color:rgba(180,0,255,.28);
-}
-.plan-card--pop .plan-support-icon{
-  background:rgba(180,0,255,.15);color:#cc66ff;
-}
-.plan-card--pop .plan-support-label{color:#9070a0}
-.plan-card--pop .plan-support-value{color:#e8b8ff}
-
-/* Enterprise support — red tint */
-.plan-card.plan-enterprise .plan-support{
-  background:rgba(255,0,110,.06);
-  border-color:rgba(255,0,110,.25);
-}
-.plan-card.plan-enterprise .plan-support-icon{
-  background:rgba(255,0,110,.12);color:#ff6699;
-}
-.plan-card.plan-enterprise .plan-support-label{color:#906070}
-.plan-card.plan-enterprise .plan-support-value{color:#ffaacc}
-
-/* ── CTA Buttons — BOLD & ATTRACTIVE ── */
+/* CTA Buttons */
 .plan-btn{
-  display:flex;
-  align-items:center;justify-content:center;
-  gap:10px;
-  width:100%;padding:16px 20px;
-  border-radius:12px;
-  font-family:'Syne',sans-serif;
-  font-size:1rem;              /* BIG & CLEAR */
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transition:all .3s;
-  cursor:pointer;
-  text-decoration:none;
-  /* Default: Starter — cyan outline */
-  border:2px solid rgba(0,245,255,.5);
-  color:#00f5ff;
-  background:transparent;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px 24px;border-radius:14px;
+  font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;
+  letter-spacing:.5px;text-transform:uppercase;
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+  cursor:pointer;text-decoration:none;position:relative;overflow:hidden;
 }
-.plan-btn i{font-size:1.1rem}
-.plan-btn:hover{
-  background:rgba(0,245,255,.1);
+.plan-btn::before{
+  content:'';position:absolute;inset:0;border-radius:14px;
+  opacity:0;transition:opacity .3s;
+}
+.plan-btn:hover::before{opacity:1}
+.plan-btn i{font-size:1.1rem;flex-shrink:0}
+
+/* Starter btn — outlined glass */
+.plan-btn.btn-starter{
+  background:rgba(0,245,255,.06);
+  border:1px solid rgba(0,245,255,.3);
+  color:#00f5ff;
+  backdrop-filter:blur(8px);
+}
+.plan-btn.btn-starter::before{background:rgba(0,245,255,.08)}
+.plan-btn.btn-starter:hover{
   border-color:#00f5ff;
-  box-shadow:0 0 30px rgba(0,245,255,.3);
+  box-shadow:0 0 30px rgba(0,245,255,.25),0 8px 20px rgba(0,0,0,.3);
   transform:translateY(-2px);
-  color:#00f5ff;
+  color:#fff;
 }
 
-/* Popular — solid gradient button */
-.plan-card--pop .plan-btn{
-  background:linear-gradient(135deg,#00f5ff,#b400ff);
-  border:none;
-  color:#04040a;
-  box-shadow:0 4px 30px rgba(0,245,255,.35);
+/* Professional btn — solid gradient */
+.plan-btn.btn-pro{
+  background:linear-gradient(135deg,#00d4e0,#8b00d4);
+  border:none;color:#fff;
+  box-shadow:0 6px 30px rgba(0,200,220,.3),0 0 0 1px rgba(0,245,255,.2);
 }
-.plan-card--pop .plan-btn:hover{
-  box-shadow:0 6px 50px rgba(0,245,255,.55);
+.plan-btn.btn-pro::before{background:linear-gradient(135deg,rgba(255,255,255,.15),transparent)}
+.plan-btn.btn-pro:hover{
+  box-shadow:0 10px 50px rgba(0,200,220,.45),0 0 0 1px rgba(0,245,255,.4);
   transform:translateY(-3px);
-  color:#04040a;
+  color:#fff;
 }
 
-/* Enterprise — pink/red */
-.plan-card.plan-enterprise .plan-btn{
-  border-color:rgba(255,0,110,.5);
-  color:#ff006e;
-  background:transparent;
+/* Enterprise btn — purple/pink */
+.plan-btn.btn-enterprise{
+  background:rgba(180,0,255,.08);
+  border:1px solid rgba(180,0,255,.3);
+  color:#cc66ff;
+  backdrop-filter:blur(8px);
 }
-.plan-card.plan-enterprise .plan-btn:hover{
-  background:rgba(255,0,110,.1);
-  border-color:#ff006e;
-  box-shadow:0 0 30px rgba(255,0,110,.3);
+.plan-btn.btn-enterprise::before{background:rgba(180,0,255,.08)}
+.plan-btn.btn-enterprise:hover{
+  border-color:#c060ff;
+  box-shadow:0 0 30px rgba(180,0,255,.25),0 8px 20px rgba(0,0,0,.3);
   transform:translateY(-2px);
-  color:#ff006e;
+  color:#fff;
 }
 
-/* Pricing note */
-.pricing-note{
-  text-align:center;margin-top:36px;
-  font-size:.9rem;             /* READABLE */
-  color:#a0a0c0;line-height:1.9;
-}
-.pricing-note a{
-  color:#00f5ff;
-  border-bottom:1px solid rgba(0,245,255,.35);
-  transition:all .2s;
-}
+.pricing-note{text-align:center;margin-top:40px;font-size:.9rem;color:rgba(160,160,200,.65);line-height:2}
+.pricing-note a{color:var(--neon);border-bottom:1px solid rgba(0,245,255,.3);transition:all .2s}
 .pricing-note a:hover{color:#fff;border-color:#fff}
 
-@media(max-width:768px){
-  .pricing-grid{grid-template-columns:1fr}
-  .plan-card{padding:28px 22px 26px}
-}
-
-/* ===== PROCESS ===== */
+/* PROCESS */
 #process{background:var(--sf)}
 .proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
 .proc-item{background:var(--bg2);border:1px solid #00f5ff10;border-radius:12px;padding:28px 22px;position:relative;text-align:center;transition:all .3s}
@@ -555,7 +522,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 .proc-item h4{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--tx);margin-bottom:10px}
 .proc-item p{font-size:.92rem;color:var(--txdd);line-height:1.65}
 
-/* ===== TOOLS ===== */
+/* TOOLS */
 #tools{background:var(--bg2)}
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px}
 .tool-item{background:var(--sf);border:1px solid #00f5ff10;border-radius:10px;padding:20px 14px;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:10px}
@@ -563,7 +530,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 .tool-item i{font-size:1.6rem}
 .tool-item span{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:2px;color:var(--txd);text-transform:uppercase}
 
-/* ===== CONNECT ===== */
+/* CONNECT */
 #connect{background:var(--bg3);text-align:center}
 .connect-inner{max-width:700px;margin:0 auto}
 .connect-inner p{font-size:1.08rem;color:var(--txd);line-height:1.85;margin-bottom:36px}
@@ -575,7 +542,6 @@ section{position:relative;z-index:1;padding:90px 20px}
 .sbtn.li:hover{border-color:#0A66C2;color:#0A66C2;box-shadow:0 0 20px #0A66C230}
 .sbtn i{font-size:1.1rem}
 
-/* Back to top */
 #btt{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid #00f5ff30;background:var(--sf);color:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.9rem;opacity:0;transition:opacity .3s,transform .3s;box-shadow:0 0 16px #00f5ff18;cursor:pointer}
 #btt.show{opacity:1}
 #btt:hover{border-color:var(--neon);box-shadow:0 0 28px #00f5ff40;transform:translateY(-3px)}
@@ -583,28 +549,16 @@ section{position:relative;z-index:1;padding:90px 20px}
 .gdivide{height:1px;background:linear-gradient(90deg,transparent,#00f5ff20,#b400ff20,transparent);margin:0}
 .hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0}
 
-/* ===== MOBILE PERFORMANCE ===== */
 @media(max-width:768px){
   section{padding:60px 16px}
   .orb-wrap{width:400px;height:400px}
   .orb-dot,.orb-dot2{display:none}
-  .orb{animation-duration:40s}
-  .orb2{animation-duration:60s}
-  .orb3{animation-duration:50s}
   .hp-frame{animation:none}
-  /* No tilt on mobile */
-  .svc-card:hover,.proc-item:hover,.tool-item:hover{transform:none}
-  /* Lightbox mobile */
   #lb-img{max-width:100%}
-  /* Pricing mobile */
-  .plan-card{padding:28px 22px 26px}
+  .pricing-grid{grid-template-columns:1fr}
+  .plan-card{padding:30px 22px}
 }
-
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-}
-
-/* ===== PERFORMANCE: will-change only where needed ===== */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 .hp-frame,.orb,.orb2,.orb3{will-change:transform}
 </style>
 </head>
@@ -619,7 +573,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div id="noise"></div>
 
-<!-- ===================== HERO ===================== -->
+<!-- HERO -->
 <section id="hero">
   <canvas class="hero-particles" id="particles"></canvas>
   <div class="orb-wrap">
@@ -644,7 +598,7 @@ section{position:relative;z-index:1;padding:90px 20px}
         <div class="hp-ring"></div>
         <div class="hp-exp">5+ Years Experience</div>
         <div class="hp-frame">
-          <img src="moeen.png" alt="Hafiz Moeen Raza" width="320" height="420" fetchpriority="high" decoding="sync">
+          <img src="moeen.jpg" alt="Hafiz Moeen Raza" width="320" height="420" fetchpriority="high" decoding="sync">
           <div class="hp-scan"></div>
         </div>
         <div class="hp-tl"></div><div class="hp-tr"></div>
@@ -658,21 +612,30 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== STATS ===================== -->
+<!-- TICKER -->
+<div id="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track">
+    <!-- pills injected by JS -->
+  </div>
+</div>
+
+<div class="gdivide"></div>
+
+<!-- STATS -->
 <section id="stats">
   <div class="wrap">
     <div class="sg">
       <div class="sitem reveal"><div class="sn" data-t="50">0+</div><div class="sl">Projects Delivered</div></div>
       <div class="sitem reveal" data-d="1"><div class="sn" data-t="5">0+</div><div class="sl">Years Experience</div></div>
       <div class="sitem reveal" data-d="2"><div class="sn" data-t="10">0+</div><div class="sl">Countries Served</div></div>
-      <div class="sitem reveal" data-d="3"><div class="sn" data-t="100">0+</div><div class="sl">Client Satisfaction</div></div>
+      <div class="sitem reveal" data-d="3"><div class="sn" data-t="100">0%</div><div class="sl">Client Satisfaction</div></div>
     </div>
   </div>
 </section>
 
 <div class="gdivide"></div>
 
-<!-- ===================== ABOUT ===================== -->
+<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
     <div class="sec-label reveal">About Me</div>
@@ -710,7 +673,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== SERVICES ===================== -->
+<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
     <div class="sec-label reveal">What I Do</div>
@@ -769,7 +732,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== PORTFOLIO ===================== -->
+<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="wrap">
     <div class="sec-label reveal">Past Work</div>
@@ -777,42 +740,42 @@ section{position:relative;z-index:1;padding:90px 20px}
     <div class="sec-line reveal"></div>
     <div class="pw-grid">
       <div class="pw-card reveal" data-d="1" onclick="openLb(0)">
-        <img src="brain.png" alt="Brian Fadrowski Real Estate" loading="lazy" width="480" height="300">
+        <img src="brain.jpg" alt="Brian Fadrowski Real Estate" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">Brian Fadrowski Real Estate</div><div class="pw-cat">Real Estate · Pennsylvania, USA</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="2" onclick="openLb(1)">
-        <img src="duhon.png" alt="Duhon Real Estate" loading="lazy" width="480" height="300">
+        <img src="duhon.jpg" alt="Duhon Real Estate" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">Duhon Real Estate</div><div class="pw-cat">Real Estate · North Carolina, USA</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="3" onclick="openLb(2)">
-        <img src="investor.png" alt="Investor Deals" loading="lazy" width="480" height="300">
+        <img src="investor.jpg" alt="Investor Deals" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">Investor Deals</div><div class="pw-cat">Real Estate Portal · Dubai, UAE</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="1" onclick="openLb(3)">
-        <img src="citi.png" alt="Citi Living Real Estate" loading="lazy" width="480" height="300">
+        <img src="citi.jpg" alt="Citi Living Real Estate" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">Citi Living Real Estate</div><div class="pw-cat">Real Estate · New Jersey & New York, USA</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="2" onclick="openLb(4)">
-        <img src="sharma.png" alt="Sharma Real Estate" loading="lazy" width="480" height="300">
+        <img src="sharma.jpg" alt="Sharma Real Estate" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">Sharma Real Estate</div><div class="pw-cat">Real Estate · Brussels, Belgium</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="3" onclick="openLb(5)">
-        <img src="shine.png" alt="Shine Life Real Estate" loading="lazy" width="480" height="300">
+        <img src="shine.jpg" alt="Shine Life Real Estate" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">Shine Life Real Estate</div><div class="pw-cat">Real Estate · Dubai, UAE</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="1" onclick="openLb(6)">
-        <img src="true.png" alt="True Real Estate" loading="lazy" width="480" height="300">
+        <img src="true.jpg" alt="True Real Estate" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">True Real Estate</div><div class="pw-cat">Real Estate · Minnesota, USA</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="pw-card reveal" data-d="2" onclick="openLb(7)">
-        <img src="ayb.png" alt="AYB Art Store" loading="lazy" width="480" height="300">
+        <img src="ayb.jpg" alt="AYB Art Store" loading="lazy" width="480" height="300">
         <div class="pw-over"><div class="pw-title">AYB — Art Store</div><div class="pw-cat">eCommerce · Pakistan</div></div>
         <div class="pw-open"><i class="fa-solid fa-expand"></i></div>
       </div>
@@ -820,7 +783,7 @@ section{position:relative;z-index:1;padding:90px 20px}
   </div>
 </section>
 
-<!-- ===================== LIGHTBOX ===================== -->
+<!-- LIGHTBOX -->
 <div id="lb">
   <div class="lb-topbar">
     <div id="lb-cap">Project Name</div>
@@ -829,21 +792,16 @@ section{position:relative;z-index:1;padding:90px 20px}
       <div class="lb-close" onclick="closeLb()"><i class="fa-solid fa-xmark"></i></div>
     </div>
   </div>
-
   <div class="lb-zoom-btns">
-    <div class="lb-zbtn" id="lb-zin"  title="Zoom In"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-    <div class="lb-zbtn" id="lb-zout" title="Zoom Out"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
-    <div class="lb-zbtn" id="lb-zrst" title="Reset" style="font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:1px;">FIT</div>
+    <div class="lb-zbtn" id="lb-zin"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+    <div class="lb-zbtn" id="lb-zout"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
+    <div class="lb-zbtn" id="lb-zrst" style="font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:1px;">FIT</div>
   </div>
-
-  <!-- scroll indicator (mobile) -->
   <div class="lb-scroll-pulse" id="lb-scroll-pulse"><i class="fa-solid fa-chevron-down"></i></div>
   <div class="lb-zoom-hint" id="lb-zoom-hint">Scroll to explore · Pinch to zoom</div>
-
   <div class="lb-img-wrap" id="lb-img-wrap">
     <img id="lb-img" src="" alt="">
   </div>
-
   <div class="lb-botbar">
     <div class="lb-nav" onclick="navLb(-1)"><i class="fa-solid fa-chevron-left"></i></div>
     <div class="lb-thumbs" id="lb-thumbs"></div>
@@ -853,29 +811,30 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== PRICING ===================== -->
+<!-- PRICING -->
 <section id="pricing">
-  <div class="wrap">
+  <div class="wrap pricing-wrap">
     <div class="sec-label reveal" style="text-align:center;">Investment</div>
     <div class="sec-title reveal" style="text-align:center;">Project <span>Packages</span></div>
     <div class="sec-line reveal" style="margin:0 auto 50px;"></div>
+
     <div class="pricing-grid">
 
       <!-- STARTER -->
       <div class="plan-card reveal" data-d="1">
         <div class="plan-tier">⚡ Starter</div>
-        <div class="plan-price">$150<span style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;-webkit-text-fill-color:#00e0f0;">+</span></div>
+        <div class="plan-price">$150<span class="plan-price-suffix">+</span></div>
         <div class="plan-sub">Perfect for small businesses, freelancers & landing pages that need a strong first impression.</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i><div><strong>5-Page Website</strong><span class="feat-note">Home, About, Services, Portfolio, Contact</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>WordPress + Elementor Pro</strong><span class="feat-note">Fully visual, easy to edit yourself</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Mobile Responsive Design</strong><span class="feat-note">Tested on all screen sizes</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Contact Form + WhatsApp Button</strong><span class="feat-note">Ready to receive leads from day one</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Basic On-Page SEO</strong><span class="feat-note">Meta titles, descriptions, image alt tags</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Speed Optimization</strong><span class="feat-note">Image compression, caching setup</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Social Media Links</strong><span class="feat-note">Instagram, LinkedIn, WhatsApp</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>1 Round of Revisions</strong></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>5-Page Website</strong><span class="feat-note">Home, About, Services, Portfolio, Contact</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>WordPress + Elementor Pro</strong><span class="feat-note">Fully visual, easy to edit yourself</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Mobile Responsive Design</strong><span class="feat-note">Tested on all screen sizes</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Contact Form + WhatsApp Button</strong><span class="feat-note">Ready to receive leads from day one</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Basic On-Page SEO</strong><span class="feat-note">Meta titles, descriptions, image alt tags</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Speed Optimization</strong><span class="feat-note">Image compression, caching setup</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Social Media Links</strong><span class="feat-note">Instagram, LinkedIn, WhatsApp</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>1 Round of Revisions</strong></div></li>
         </ul>
         <div class="plan-support">
           <div class="plan-support-icon"><i class="fa-solid fa-headset"></i></div>
@@ -884,29 +843,30 @@ section{position:relative;z-index:1;padding:90px 20px}
             <span class="plan-support-value">1 Month Included</span>
           </div>
         </div>
-        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Starter%20package%20($150%2B).%20Let's%20discuss!" target="_blank" class="plan-btn">
+        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Starter%20package%20($150%2B).%20Let's%20discuss!" target="_blank" class="plan-btn btn-starter">
           <i class="fa-brands fa-whatsapp"></i> Get Started
         </a>
       </div>
 
-      <!-- PROFESSIONAL (Popular) -->
+      <!-- PROFESSIONAL -->
       <div class="plan-card plan-card--pop reveal" data-d="2">
+        <div class="plan-glow-line"></div>
         <div class="plan-pop-badge">🔥 Most Popular</div>
         <div class="plan-tier">🚀 Professional</div>
-        <div class="plan-price">$450<span style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;-webkit-text-fill-color:#b400ff;">+</span></div>
+        <div class="plan-price">$450<span class="plan-price-suffix">+</span></div>
         <div class="plan-sub">Ideal for real estate agencies, eCommerce stores & growing businesses that demand results.</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i><div><strong>Up to 20 Pages</strong><span class="feat-note">Full site with all content sections</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>MLS / IDX Integration</strong><span class="feat-note">Live property listings for real estate</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Google Maps API</strong><span class="feat-note">Interactive location maps embedded</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Lead Forms + CRM Integration</strong><span class="feat-note">Capture & organize leads automatically</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Advanced On-Page SEO</strong><span class="feat-note">Schema markup, sitemap, robots.txt</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>WooCommerce Setup</strong><span class="feat-note">Product pages, cart, checkout, payments</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Performance Optimization</strong><span class="feat-note">90+ PageSpeed score target</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Security Hardening</strong><span class="feat-note">Firewall, login protection, SSL</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>3 Rounds of Revisions</strong></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Analytics Setup</strong><span class="feat-note">Google Analytics + Search Console</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Up to 20 Pages</strong><span class="feat-note">Full site with all content sections</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>MLS / IDX Integration</strong><span class="feat-note">Live property listings for real estate</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Google Maps API</strong><span class="feat-note">Interactive location maps embedded</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Lead Forms + CRM Integration</strong><span class="feat-note">Capture & organize leads automatically</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Advanced On-Page SEO</strong><span class="feat-note">Schema markup, sitemap, robots.txt</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>WooCommerce Setup</strong><span class="feat-note">Product pages, cart, checkout, payments</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Performance Optimization</strong><span class="feat-note">90+ PageSpeed score target</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Security Hardening</strong><span class="feat-note">Firewall, login protection, SSL</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>3 Rounds of Revisions</strong></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Analytics Setup</strong><span class="feat-note">Google Analytics + Search Console</span></div></li>
         </ul>
         <div class="plan-support">
           <div class="plan-support-icon"><i class="fa-solid fa-shield-halved"></i></div>
@@ -915,28 +875,29 @@ section{position:relative;z-index:1;padding:90px 20px}
             <span class="plan-support-value">2 Months Included</span>
           </div>
         </div>
-        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Professional%20package%20($450%2B).%20Let's%20discuss!" target="_blank" class="plan-btn">
+        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Professional%20package%20($450%2B).%20Let's%20discuss!" target="_blank" class="plan-btn btn-pro">
           <i class="fa-brands fa-whatsapp"></i> Get Started
         </a>
       </div>
 
       <!-- ENTERPRISE -->
       <div class="plan-card plan-enterprise reveal" data-d="3">
+        <div class="plan-glow-line"></div>
         <div class="plan-tier">💎 Enterprise</div>
         <div class="plan-price">CUSTOM</div>
         <div class="plan-sub">Full-scale portals, complex eCommerce & bespoke builds with AI integration — built exactly to spec.</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i><div><strong>Unlimited Pages</strong><span class="feat-note">No limits on scope or structure</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Full WooCommerce Store</strong><span class="feat-note">Multi-currency, subscriptions, bulk orders</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Custom Plugin Development</strong><span class="feat-note">Features built specifically for your workflow</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>AI Chatbot Integration</strong><span class="feat-note">ChatGPT or Claude trained on your content</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Advanced Security Suite</strong><span class="feat-note">WAF, 2FA, malware scanning, backups</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Speed & Core Web Vitals</strong><span class="feat-note">LCP, FID, CLS fully optimized</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Multi-Language Support</strong><span class="feat-note">WPML or Polylang setup</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>API & Third-Party Integrations</strong><span class="feat-note">CRM, payment gateways, calendars</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Unlimited Revisions</strong></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Priority Turnaround</strong><span class="feat-note">Dedicated timeline & project management</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Unlimited Pages</strong><span class="feat-note">No limits on scope or structure</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Full WooCommerce Store</strong><span class="feat-note">Multi-currency, subscriptions, bulk orders</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Custom Plugin Development</strong><span class="feat-note">Features built specifically for your workflow</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>AI Chatbot Integration</strong><span class="feat-note">ChatGPT or Claude trained on your content</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Advanced Security Suite</strong><span class="feat-note">WAF, 2FA, malware scanning, backups</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Speed & Core Web Vitals</strong><span class="feat-note">LCP, FID, CLS fully optimized</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Multi-Language Support</strong><span class="feat-note">WPML or Polylang setup</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>API & Third-Party Integrations</strong><span class="feat-note">CRM, payment gateways, calendars</span></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Unlimited Revisions</strong></div></li>
+          <li><span class="feat-check"><i class="fa-solid fa-check"></i></span><div><strong>Priority Turnaround</strong><span class="feat-note">Dedicated timeline & project management</span></div></li>
         </ul>
         <div class="plan-support">
           <div class="plan-support-icon"><i class="fa-solid fa-star"></i></div>
@@ -945,7 +906,7 @@ section{position:relative;z-index:1;padding:90px 20px}
             <span class="plan-support-value">3 Months Included</span>
           </div>
         </div>
-        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I%20need%20an%20Enterprise%20custom%20build.%20Let's%20discuss%20the%20project!" target="_blank" class="plan-btn">
+        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I%20need%20an%20Enterprise%20custom%20build.%20Let's%20discuss%20the%20project!" target="_blank" class="plan-btn btn-enterprise">
           <i class="fa-brands fa-whatsapp"></i> Let's Talk
         </a>
       </div>
@@ -960,7 +921,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== PROCESS ===================== -->
+<!-- PROCESS -->
 <section id="process">
   <div class="wrap">
     <div class="sec-label reveal">How I Work</div>
@@ -978,7 +939,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== TOOLS ===================== -->
+<!-- TOOLS -->
 <section id="tools">
   <div class="wrap">
     <div class="sec-label reveal">My Toolkit</div>
@@ -999,7 +960,7 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <div class="gdivide"></div>
 
-<!-- ===================== CONNECT ===================== -->
+<!-- CONNECT -->
 <section id="connect">
   <div class="wrap">
     <div class="connect-inner">
@@ -1019,9 +980,8 @@ section{position:relative;z-index:1;padding:90px 20px}
 
 <button id="btt" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-<!-- ===================== SCRIPTS ===================== -->
 <script>
-/* ---- SPLASH ---- */
+/* SPLASH */
 (function(){
   setTimeout(function(){
     var sp=document.getElementById('splash');
@@ -1031,7 +991,7 @@ section{position:relative;z-index:1;padding:90px 20px}
   },2800);
 })();
 
-/* ---- ROLE CYCLE ---- */
+/* ROLE CYCLE */
 (function(){
   var roles=['WordPress Designer','UI/UX Designer','Elementor Expert','Real Estate Specialist','Digital Experience Creator'];
   var el=document.getElementById('role-text');
@@ -1048,7 +1008,53 @@ section{position:relative;z-index:1;padding:90px 20px}
   },2800);
 })();
 
-/* ---- PARTICLES — desktop only ---- */
+/* ===== TICKER ===== */
+(function(){
+  var items=[
+    {icon:'fa-brands fa-wordpress',label:'WordPress Development',cls:''},
+    {icon:'fa-solid fa-pen-ruler',label:'UI/UX Design',cls:'p2'},
+    {icon:'fa-solid fa-house-chimney',label:'Real Estate Websites',cls:'p3'},
+    {icon:'fa-brands fa-figma',label:'Figma Prototyping',cls:'p2'},
+    {icon:'fa-brands fa-shopify',label:'WooCommerce Stores',cls:'p4'},
+    {icon:'fa-solid fa-robot',label:'AI Chatbot Integration',cls:''},
+    {icon:'fa-solid fa-mobile-screen-button',label:'Mobile-First Design',cls:'p3'},
+    {icon:'fa-solid fa-gauge-high',label:'SEO & Performance',cls:'p4'},
+    {icon:'fa-solid fa-layer-group',label:'Elementor Pro',cls:'p2'},
+    {icon:'fa-solid fa-bezier-curve',label:'Adobe Illustrator',cls:'p3'},
+    {icon:'fa-solid fa-image',label:'Photoshop & Graphics',cls:''},
+    {icon:'fa-solid fa-code',label:'Custom Integrations',cls:'p4'},
+  ];
+
+  var track=document.getElementById('ticker-track');
+  if(!track)return;
+
+  function buildSet(){
+    var frag=document.createDocumentFragment();
+    items.forEach(function(item){
+      var pill=document.createElement('div');
+      pill.className='ticker-pill'+(item.cls?' '+item.cls:'');
+      pill.innerHTML='<i class="'+item.icon+'"></i>'+item.label;
+      frag.appendChild(pill);
+      var sep=document.createElement('span');
+      sep.className='ticker-sep';
+      frag.appendChild(sep);
+    });
+    return frag;
+  }
+  /* Two identical sets for seamless loop */
+  track.appendChild(buildSet());
+  track.appendChild(buildSet());
+
+  /* Measure one set width and set animation duration proportionally */
+  requestAnimationFrame(function(){
+    var totalW=track.scrollWidth/2;
+    var speed=60; /* px per second */
+    var dur=totalW/speed;
+    track.style.animationDuration=dur+'s';
+  });
+})();
+
+/* PARTICLES */
 (function(){
   if(window.innerWidth<768)return;
   var canvas=document.getElementById('particles');
@@ -1090,7 +1096,7 @@ section{position:relative;z-index:1;padding:90px 20px}
   });
 })();
 
-/* ---- REVEAL ---- */
+/* REVEAL */
 (function(){
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
@@ -1104,7 +1110,7 @@ section{position:relative;z-index:1;padding:90px 20px}
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 })();
 
-/* ---- SKILL BARS ---- */
+/* SKILL BARS */
 (function(){
   var sio=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
@@ -1118,23 +1124,26 @@ section{position:relative;z-index:1;padding:90px 20px}
   document.querySelectorAll('.skr').forEach(function(r){sio.observe(r);});
 })();
 
-/* ---- COUNTERS ---- */
+/* COUNTERS */
 (function(){
-  function animCount(el,t){
+  function animCount(el,t,suffix){
     var start=null,dur=1400;
     function step(ts){
       if(!start)start=ts;
       var prog=Math.min((ts-start)/dur,1);
       var ease=1-Math.pow(1-prog,3);
-      el.textContent=Math.floor(ease*t)+'+';
-      if(prog<1)requestAnimationFrame(step);else el.textContent=t+'+';
+      el.textContent=Math.floor(ease*t)+(suffix||'+');
+      if(prog<1)requestAnimationFrame(step);else el.textContent=t+(suffix||'+');
     }
     requestAnimationFrame(step);
   }
   var cio=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
-        document.querySelectorAll('.sn').forEach(function(n){animCount(n,parseInt(n.dataset.t));});
+        document.querySelectorAll('.sn').forEach(function(n){
+          var suffix=n.dataset.t==='100'?'%':'+';
+          animCount(n,parseInt(n.dataset.t),suffix);
+        });
         cio.disconnect();
       }
     });
@@ -1143,26 +1152,22 @@ section{position:relative;z-index:1;padding:90px 20px}
   if(st)cio.observe(st);
 })();
 
-/* ===================== LIGHTBOX ===================== */
+/* LIGHTBOX */
 var PROJECTS=[
-  {src:'brain.png',    cap:'Brian Fadrowski Real Estate', loc:'Pennsylvania, USA'},
-  {src:'duhon.png',    cap:'Duhon Real Estate',           loc:'North Carolina, USA'},
-  {src:'investor.png', cap:'Investor Deals',              loc:'Dubai, UAE'},
-  {src:'citi.png',     cap:'Citi Living Real Estate',     loc:'New Jersey & New York, USA'},
-  {src:'sharma.png',   cap:'Sharma Real Estate',          loc:'Brussels, Belgium'},
-  {src:'shine.png',    cap:'Shine Life Real Estate',      loc:'Dubai, UAE'},
-  {src:'true.png',     cap:'True Real Estate',            loc:'Minnesota, USA'},
-  {src:'ayb.png',      cap:'AYB — Art Store',             loc:'Pakistan'},
+  {src:'brain.jpg',    cap:'Brian Fadrowski Real Estate', loc:'Pennsylvania, USA'},
+  {src:'duhon.jpg',    cap:'Duhon Real Estate',           loc:'North Carolina, USA'},
+  {src:'investor.jpg', cap:'Investor Deals',              loc:'Dubai, UAE'},
+  {src:'citi.jpg',     cap:'Citi Living Real Estate',     loc:'New Jersey & New York, USA'},
+  {src:'sharma.jpg',   cap:'Sharma Real Estate',          loc:'Brussels, Belgium'},
+  {src:'shine.jpg',    cap:'Shine Life Real Estate',      loc:'Dubai, UAE'},
+  {src:'true.jpg',     cap:'True Real Estate',            loc:'Minnesota, USA'},
+  {src:'ayb.jpg',      cap:'AYB — Art Store',             loc:'Pakistan'},
 ];
 
-var isMobile = window.innerWidth < 768;
-var lbZoom   = 1;      /* current CSS scale */
-var lbIdx    = 0;
-var ZOOM_STEP = 0.25;
-var ZOOM_MIN  = 0.5;
-var ZOOM_MAX  = 3;
+var isMobile=window.innerWidth<768;
+var lbZoom=1,lbIdx=0;
+var ZOOM_STEP=0.25,ZOOM_MIN=0.5,ZOOM_MAX=3;
 
-/* Build thumbnails */
 (function(){
   var strip=document.getElementById('lb-thumbs');
   PROJECTS.forEach(function(p,i){
@@ -1175,7 +1180,6 @@ var ZOOM_MAX  = 3;
   });
 })();
 
-/* Apply zoom via CSS transform */
 function lbApplyZoom(z){
   lbZoom=Math.min(ZOOM_MAX,Math.max(ZOOM_MIN,z));
   var img=document.getElementById('lb-img');
@@ -1183,7 +1187,6 @@ function lbApplyZoom(z){
   img.style.transformOrigin='top center';
 }
 
-/* Mobile auto-scroll: smoothly scroll down then up, repeat twice */
 var _autoScrollTimer=null;
 function lbMobileAutoScroll(){
   if(_autoScrollTimer){clearTimeout(_autoScrollTimer);_autoScrollTimer=null;}
@@ -1191,37 +1194,21 @@ function lbMobileAutoScroll(){
   var wrap=document.getElementById('lb-img-wrap');
   var pulse=document.getElementById('lb-scroll-pulse');
   var hint=document.getElementById('lb-zoom-hint');
-
-  /* show indicators */
   if(pulse)pulse.classList.add('show');
   if(hint)hint.classList.add('show');
-
-  /* wait for image to render, then start scroll */
   _autoScrollTimer=setTimeout(function(){
     var img=document.getElementById('lb-img');
     var totalH=img?img.offsetHeight:wrap.scrollHeight;
     var viewH=wrap.clientHeight;
-    if(totalH<=viewH){
-      /* image fits, hide indicators */
-      if(pulse)pulse.classList.remove('show');
-      if(hint)hint.classList.remove('show');
-      return;
-    }
-
-    var duration=2200; /* ms to scroll down */
-    var start=null;
-    var maxScroll=totalH-viewH;
-
-    /* Scroll DOWN */
+    if(totalH<=viewH){if(pulse)pulse.classList.remove('show');if(hint)hint.classList.remove('show');return;}
+    var duration=2200,start=null,maxScroll=totalH-viewH;
     function scrollDown(ts){
       if(!start)start=ts;
       var prog=Math.min((ts-start)/duration,1);
-      /* easeInOut */
       var ease=prog<.5?2*prog*prog:1-Math.pow(-2*prog+2,2)/2;
       wrap.scrollTop=ease*maxScroll;
       if(prog<1)requestAnimationFrame(scrollDown);
       else{
-        /* pause then scroll back up */
         _autoScrollTimer=setTimeout(function(){
           var start2=null;
           function scrollUp(ts){
@@ -1230,11 +1217,7 @@ function lbMobileAutoScroll(){
             var ease2=prog2<.5?2*prog2*prog2:1-Math.pow(-2*prog2+2,2)/2;
             wrap.scrollTop=(1-ease2)*maxScroll;
             if(prog2<1)requestAnimationFrame(scrollUp);
-            else{
-              /* hide indicators — user can now scroll freely */
-              if(pulse)pulse.classList.remove('show');
-              if(hint)hint.classList.remove('show');
-            }
+            else{if(pulse)pulse.classList.remove('show');if(hint)hint.classList.remove('show');}
           }
           requestAnimationFrame(scrollUp);
         },800);
@@ -1249,76 +1232,50 @@ function setLb(i){
   var p=PROJECTS[i];
   var img=document.getElementById('lb-img');
   var wrap=document.getElementById('lb-img-wrap');
-
   img.style.opacity='0';
-  /* reset zoom & scroll */
-  lbZoom=1;
-  img.style.transform='scale(1)';
+  lbZoom=1;img.style.transform='scale(1)';
   wrap.scrollTop=0;wrap.scrollLeft=0;
-
   setTimeout(function(){
     img.src=p.src;img.alt=p.cap;
     img.style.opacity='1';
-    /* trigger mobile auto-scroll after image loads */
     img.onload=function(){lbMobileAutoScroll();};
     if(img.complete&&img.naturalHeight>0)lbMobileAutoScroll();
   },150);
-
   document.getElementById('lb-cap').textContent=p.cap+' — '+p.loc;
   document.getElementById('lb-counter').textContent=(i+1)+' / '+PROJECTS.length;
-
-  document.querySelectorAll('.lb-thumb').forEach(function(t,ti){
-    t.classList.toggle('active',ti===i);
-  });
+  document.querySelectorAll('.lb-thumb').forEach(function(t,ti){t.classList.toggle('active',ti===i);});
   var at=document.getElementById('lbth-'+i);
   if(at)at.scrollIntoView({inline:'center',behavior:'smooth',block:'nearest'});
 }
 
-window.openLb=function(i){
-  setLb(i);
-  document.getElementById('lb').classList.add('open');
-  document.body.style.overflow='hidden';
-};
+window.openLb=function(i){setLb(i);document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';};
 window.closeLb=function(){
   if(_autoScrollTimer){clearTimeout(_autoScrollTimer);_autoScrollTimer=null;}
   document.getElementById('lb').classList.remove('open');
   document.body.style.overflow='';
-  /* reset */
-  lbZoom=1;
-  document.getElementById('lb-img').style.transform='scale(1)';
+  lbZoom=1;document.getElementById('lb-img').style.transform='scale(1)';
 };
 window.navLb=function(d){setLb((lbIdx+d+PROJECTS.length)%PROJECTS.length);};
 
-/* Zoom buttons */
-document.getElementById('lb-zin').addEventListener('click', function(){lbApplyZoom(lbZoom+ZOOM_STEP);});
+document.getElementById('lb-zin').addEventListener('click',function(){lbApplyZoom(lbZoom+ZOOM_STEP);});
 document.getElementById('lb-zout').addEventListener('click',function(){lbApplyZoom(lbZoom-ZOOM_STEP);});
 document.getElementById('lb-zrst').addEventListener('click',function(){lbApplyZoom(1);});
 
-/* Keyboard */
 document.addEventListener('keydown',function(e){
   var lb=document.getElementById('lb');
   if(!lb.classList.contains('open'))return;
-  if(e.key==='Escape')     closeLb();
-  if(e.key==='ArrowRight') navLb(1);
-  if(e.key==='ArrowLeft')  navLb(-1);
-  if(e.key==='+'||e.key==='=') lbApplyZoom(lbZoom+ZOOM_STEP);
-  if(e.key==='-')          lbApplyZoom(lbZoom-ZOOM_STEP);
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowRight')navLb(1);
+  if(e.key==='ArrowLeft')navLb(-1);
+  if(e.key==='+'||e.key==='=')lbApplyZoom(lbZoom+ZOOM_STEP);
+  if(e.key==='-')lbApplyZoom(lbZoom-ZOOM_STEP);
 });
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb();});
 
-/* Click backdrop to close */
-document.getElementById('lb').addEventListener('click',function(e){
-  if(e.target===this)closeLb();
-});
-
-/* Swipe nav */
 (function(){
   var lb=document.getElementById('lb');
   var startX,startY,startScroll;
-  lb.addEventListener('touchstart',function(e){
-    startX=e.touches[0].clientX;
-    startY=e.touches[0].clientY;
-    startScroll=document.getElementById('lb-img-wrap').scrollLeft;
-  },{passive:true});
+  lb.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;startY=e.touches[0].clientY;startScroll=document.getElementById('lb-img-wrap').scrollLeft;},{passive:true});
   lb.addEventListener('touchend',function(e){
     if(startX==null)return;
     var dx=e.changedTouches[0].clientX-startX;
@@ -1329,30 +1286,19 @@ document.getElementById('lb').addEventListener('click',function(e){
   },{passive:true});
 })();
 
-/* Pinch zoom (mobile) */
 (function(){
   var wrap=document.getElementById('lb-img-wrap');
   var initDist=0,initZoom=1;
-  wrap.addEventListener('touchstart',function(e){
-    if(e.touches.length===2){
-      initDist=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);
-      initZoom=lbZoom;
-    }
-  },{passive:true});
-  wrap.addEventListener('touchmove',function(e){
-    if(e.touches.length===2){
-      var dist=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);
-      lbApplyZoom(initZoom*(dist/initDist));
-    }
-  },{passive:true});
+  wrap.addEventListener('touchstart',function(e){if(e.touches.length===2){initDist=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);initZoom=lbZoom;}},{passive:true});
+  wrap.addEventListener('touchmove',function(e){if(e.touches.length===2){var dist=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);lbApplyZoom(initZoom*(dist/initDist));}},{passive:true});
 })();
 
-/* ---- BACK TO TOP ---- */
+/* BACK TO TOP */
 var btt=document.getElementById('btt');
 window.addEventListener('scroll',function(){btt.classList.toggle('show',window.scrollY>400);},{passive:true});
 btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 
-/* ---- CARD TILT — desktop only ---- */
+/* CARD TILT */
 if(window.innerWidth>768){
   document.querySelectorAll('.svc-card,.proc-item,.tool-item').forEach(function(card){
     card.addEventListener('mousemove',function(e){
